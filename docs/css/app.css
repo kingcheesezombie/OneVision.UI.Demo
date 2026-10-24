@@ -8,10 +8,79 @@ body {
 
 .ov-gallery-layout {
     min-height: 100vh;
+    background: var(--ov-colour-background);
 }
 
 .ov-gallery-appbar {
     border-bottom: 1px solid var(--ov-colour-border);
+}
+
+.ov-profile--experience .ov-gallery-appbar {
+    background: linear-gradient(135deg, #005eb8 0%, #0072ce 72%, #00a5df 100%) !important;
+    color: #fff !important;
+    border-bottom: 0;
+    box-shadow: 0 6px 20px rgba(0, 94, 184, .16);
+}
+
+.ov-gallery-profile-description {
+    margin-left: 12px !important;
+    white-space: nowrap;
+}
+
+.ov-profile--experience .ov-gallery-profile-description {
+    color: rgba(255,255,255,.82) !important;
+}
+
+.ov-profile-switch {
+    display: inline-flex;
+    align-items: center;
+    padding: 2px;
+    border: 1px solid var(--ov-colour-border-strong);
+    border-radius: 999px;
+    background: var(--ov-colour-surface-soft);
+}
+
+.ov-profile--experience .ov-profile-switch {
+    border-color: rgba(255,255,255,.38);
+    background: rgba(255,255,255,.14);
+}
+
+.ov-profile-switch__button {
+    min-height: 28px;
+    padding: 3px 12px;
+    border: 0;
+    border-radius: 999px;
+    background: transparent;
+    color: var(--ov-colour-muted);
+    font: inherit;
+    font-size: 9pt;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.ov-profile-switch__button:hover {
+    color: var(--ov-colour-primary);
+    background: var(--ov-colour-primary-soft);
+}
+
+.ov-profile-switch__button--active {
+    background: var(--ov-colour-primary);
+    color: #fff;
+    box-shadow: 0 1px 3px rgba(0, 94, 184, .18);
+}
+
+.ov-profile--experience .ov-profile-switch__button {
+    color: rgba(255,255,255,.8);
+}
+
+.ov-profile--experience .ov-profile-switch__button:hover {
+    color: #fff;
+    background: rgba(255,255,255,.15);
+}
+
+.ov-profile--experience .ov-profile-switch__button--active {
+    background: #fff;
+    color: #005eb8;
 }
 
 .ov-gallery-drawer {
@@ -19,6 +88,10 @@ body {
     border-right: 1px solid var(--ov-colour-border) !important;
     background: var(--ov-colour-surface);
     overflow-y: auto;
+}
+
+.ov-profile--experience .ov-gallery-drawer {
+    box-shadow: 4px 0 18px rgba(23, 50, 74, .04);
 }
 
 .ov-gallery-nav-title {
@@ -46,12 +119,24 @@ body {
     padding-left: 28px;
 }
 
+.ov-profile--experience .ov-gallery-content {
+    padding-top: 36px;
+    padding-right: 36px;
+    padding-left: 36px;
+}
+
 .ov-gallery-page-title {
     margin: 0 0 8px;
     font-family: var(--ov-font-family);
     font-size: 24px;
-    font-weight: 400;
+    font-weight: 500;
     color: var(--ov-colour-text);
+}
+
+.ov-profile--experience .ov-gallery-page-title {
+    font-size: 32px;
+    font-weight: 600;
+    letter-spacing: -.5px;
 }
 
 .ov-gallery-page-intro {
@@ -60,11 +145,24 @@ body {
     color: var(--ov-colour-muted);
 }
 
+.ov-profile--experience .ov-gallery-page-intro {
+    max-width: 760px;
+    margin-bottom: 32px !important;
+    font-size: 11pt;
+    line-height: 1.5;
+}
+
 .ov-library-card {
     height: 100%;
     padding: 20px;
+    background: var(--ov-colour-surface);
     border: 1px solid var(--ov-colour-border);
     border-radius: var(--ov-radius-md);
+}
+
+.ov-profile--experience .ov-library-card {
+    padding: 26px;
+    box-shadow: var(--ov-shadow-surface);
 }
 
 .ov-demo-wrap {
@@ -75,7 +173,7 @@ body {
     margin: 0;
     padding: 14px 16px;
     overflow-x: auto;
-    background: #f7f8fa;
+    background: var(--ov-colour-surface-soft);
     border: 1px solid var(--ov-colour-border);
     border-radius: var(--ov-radius-sm);
     font-size: 9pt;
@@ -83,6 +181,10 @@ body {
 
 .ov-pattern-nav-node .mud-nav-link {
     min-height: 34px;
+}
+
+.ov-profile--experience .ov-pattern-nav-node .mud-nav-link {
+    min-height: 40px;
 }
 
 .ov-pattern-nav-depth-1 {
@@ -128,9 +230,9 @@ body {
     align-items: center;
     min-height: 24px;
     padding: 2px 8px;
-    background: #eef2f5;
+    background: var(--ov-colour-primary-soft);
     border-radius: 999px;
-    color: var(--ov-colour-muted);
+    color: var(--ov-colour-primary);
     font-size: 9pt;
 }
 
@@ -141,9 +243,14 @@ body {
     gap: 16px;
     margin-bottom: 24px;
     padding: 12px 14px;
-    background: #f7f8fa;
+    background: var(--ov-colour-surface-soft);
     border: 1px solid var(--ov-colour-border);
     border-radius: var(--ov-radius-md);
+}
+
+.ov-profile--experience .ov-pattern-reference {
+    padding: 16px 18px;
+    box-shadow: 0 4px 14px rgba(23, 50, 74, .04);
 }
 
 .ov-pattern-reference__label {
@@ -174,6 +281,10 @@ body {
     border-radius: var(--ov-radius-md);
 }
 
+.ov-profile--experience .ov-pattern-preview {
+    box-shadow: var(--ov-shadow-surface);
+}
+
 .ov-pattern-preview--scope {
     overflow: hidden;
 }
@@ -186,6 +297,11 @@ body {
     padding: 14px 16px;
 }
 
+.ov-profile--experience .ov-pattern-preview__header,
+.ov-profile--experience .ov-pattern-preview__footer {
+    padding: 18px 20px;
+}
+
 .ov-pattern-preview__header {
     justify-content: space-between;
     border-bottom: 1px solid var(--ov-colour-border);
@@ -193,7 +309,7 @@ body {
 
 .ov-pattern-preview__scope-title {
     padding: 12px 16px;
-    background: #f7f8fa;
+    background: var(--ov-colour-surface-soft);
     border-bottom: 1px solid var(--ov-colour-border);
     color: var(--ov-colour-muted);
     font-size: 9pt;
@@ -214,6 +330,10 @@ body {
     padding: 16px;
 }
 
+.ov-profile--experience .ov-pattern-scope-body {
+    padding: 22px;
+}
+
 .ov-pattern-scope-body > .mud-grid {
     padding: 0;
 }
@@ -230,8 +350,14 @@ body {
     min-height: 210px;
     height: 100%;
     padding: 16px;
+    background: var(--ov-colour-surface);
     border: 1px solid var(--ov-colour-border);
     border-radius: var(--ov-radius-md);
+}
+
+.ov-profile--experience .ov-pattern-child-card {
+    padding: 22px;
+    box-shadow: 0 6px 18px rgba(23, 50, 74, .05);
 }
 
 .ov-pattern-child-card__meta {
@@ -262,10 +388,16 @@ body {
     max-width: 760px;
     margin: 0 auto;
     padding: 48px 24px;
+    background: var(--ov-colour-surface);
     border: 1px dashed var(--ov-colour-border);
     border-radius: var(--ov-radius-md);
     color: var(--ov-colour-muted);
     text-align: center;
+}
+
+.ov-profile--experience .ov-pattern-placeholder {
+    padding: 60px 30px;
+    box-shadow: var(--ov-shadow-surface);
 }
 
 .ov-gallery-loading {
@@ -285,6 +417,10 @@ body {
     border-radius: 4px;
 }
 
+@media (max-width: 1100px) {
+    .ov-gallery-profile-description { display: none; }
+}
+
 @media (max-width: 900px) {
     .ov-gallery-drawer {
         width: 250px !important;
@@ -295,7 +431,8 @@ body {
         width: calc(100% - 250px) !important;
     }
 
-    .ov-gallery-content {
+    .ov-gallery-content,
+    .ov-profile--experience .ov-gallery-content {
         padding-right: 20px;
         padding-left: 20px;
     }

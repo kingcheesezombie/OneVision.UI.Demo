@@ -1,23 +1,27 @@
-:root {
+:root,
+.ov-profile--manager {
     --ov-font-family: "Segoe UI Light", "Segoe UI", Arial, sans-serif;
     --ov-font-size-body: 10pt;
+    --ov-font-weight-body: 300;
     --ov-colour-primary: #005eb8;
     --ov-colour-primary-hover: #004b93;
-    --ov-colour-primary-soft: #e8f1f8;
-    --ov-colour-text: #212b32;
+    --ov-colour-primary-soft: #e8f2fa;
+    --ov-colour-accent: #0072ce;
+    --ov-colour-text: #1b2a34;
     --ov-colour-muted: #4c6272;
     --ov-colour-subtle: #768692;
-    --ov-colour-border: #d8dde2;
-    --ov-colour-border-strong: #c4ccd2;
+    --ov-colour-border: #d9e2e8;
+    --ov-colour-border-strong: #c7d2da;
     --ov-colour-surface: #ffffff;
-    --ov-colour-surface-soft: #f8fafb;
-    --ov-colour-background: #f3f5f6;
+    --ov-colour-surface-soft: #f4f7f9;
+    --ov-colour-background: #f7f9fb;
     --ov-colour-header: #ffffff;
     --ov-colour-nav: #ffffff;
-    --ov-shadow-header: 0 1px 3px rgba(33, 43, 50, 0.08);
-    --ov-shadow-surface: 0 1px 2px rgba(33, 43, 50, 0.05);
+    --ov-shadow-header: 0 1px 3px rgba(27, 42, 52, 0.08);
+    --ov-shadow-surface: 0 1px 2px rgba(27, 42, 52, 0.05);
     --ov-radius-sm: 4px;
     --ov-radius-md: 6px;
+    --ov-radius-lg: 8px;
     --ov-space-xs: 4px;
     --ov-space-sm: 8px;
     --ov-space-md: 12px;
@@ -26,13 +30,55 @@
     --ov-shell-header-height: 58px;
     --ov-shell-nav-height: 40px;
     --ov-content-max-width: 1680px;
+    --ov-page-title-size: 18pt;
+    --ov-page-description-size: 10pt;
+    --ov-control-height: 32px;
+    --ov-status-height: 22px;
+    --ov-surface-padding: 18px 20px;
+}
+
+.ov-profile--experience {
+    --ov-font-size-body: 10.5pt;
+    --ov-font-weight-body: 400;
+    --ov-colour-primary: #005eb8;
+    --ov-colour-primary-hover: #004b93;
+    --ov-colour-primary-soft: #e1f1fb;
+    --ov-colour-accent: #00a5df;
+    --ov-colour-text: #17324a;
+    --ov-colour-muted: #425b70;
+    --ov-colour-subtle: #668096;
+    --ov-colour-border: #cbdde9;
+    --ov-colour-border-strong: #afc9db;
+    --ov-colour-surface: #ffffff;
+    --ov-colour-surface-soft: #f4faff;
+    --ov-colour-background: #eef6fb;
+    --ov-colour-header: #005eb8;
+    --ov-colour-nav: #ffffff;
+    --ov-shadow-header: 0 6px 20px rgba(0, 94, 184, 0.18);
+    --ov-shadow-surface: 0 8px 24px rgba(23, 50, 74, 0.08);
+    --ov-radius-sm: 8px;
+    --ov-radius-md: 12px;
+    --ov-radius-lg: 16px;
+    --ov-space-xs: 6px;
+    --ov-space-sm: 10px;
+    --ov-space-md: 16px;
+    --ov-space-lg: 24px;
+    --ov-space-xl: 36px;
+    --ov-shell-header-height: 72px;
+    --ov-shell-nav-height: 48px;
+    --ov-content-max-width: 1440px;
+    --ov-page-title-size: 26pt;
+    --ov-page-description-size: 11pt;
+    --ov-control-height: 40px;
+    --ov-status-height: 26px;
+    --ov-surface-padding: 24px 26px;
 }
 
 html, body {
     margin: 0;
     font-family: var(--ov-font-family);
     font-size: var(--ov-font-size-body);
-    font-weight: 300;
+    font-weight: var(--ov-font-weight-body);
     color: var(--ov-colour-text);
     background: var(--ov-colour-background);
 }
@@ -45,14 +91,14 @@ button, input, select, textarea { font-family: inherit; }
     text-transform: none !important;
     letter-spacing: normal !important;
     border-radius: var(--ov-radius-sm) !important;
-    min-height: 32px;
-    font-weight: 400 !important;
+    min-height: var(--ov-control-height);
+    font-weight: 500 !important;
 }
 
 .ov-status-pill {
     display: inline-flex;
     align-items: center;
-    min-height: 22px;
+    min-height: var(--ov-status-height);
     padding: 2px 8px;
     border-radius: 999px;
     font-size: 9pt;
@@ -60,6 +106,8 @@ button, input, select, textarea { font-family: inherit; }
     line-height: 1;
     white-space: nowrap;
 }
+
+.ov-profile--experience .ov-status-pill { padding-inline: 10px; }
 
 .ov-status-pill--neutral { background: #e8edee; color: #354550; }
 .ov-status-pill--info { background: #e5f3fb; color: #005eb8; }
@@ -90,6 +138,14 @@ button, input, select, textarea { font-family: inherit; }
     z-index: 2;
 }
 
+.ov-profile--manager .ov-app-shell__header { border-top: 3px solid var(--ov-colour-primary); }
+
+.ov-profile--experience .ov-app-shell__header {
+    padding-inline: 30px;
+    background: linear-gradient(135deg, #005eb8 0%, #0072ce 68%, #00a5df 100%);
+    border-bottom: 0;
+}
+
 .ov-app-shell__identity,
 .ov-app-shell__header-actions,
 .ov-page__header,
@@ -111,13 +167,18 @@ button, input, select, textarea { font-family: inherit; }
     justify-content: center;
     flex: 0 0 42px;
 }
+.ov-profile--experience .ov-app-shell__logo {
+    width: 48px;
+    height: 48px;
+    flex-basis: 48px;
+}
 .ov-app-shell__titles { min-width: 0; }
 .ov-app-shell__title {
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
     font-size: 15pt;
-    font-weight: 300;
+    font-weight: 400;
     line-height: 1.15;
     color: var(--ov-colour-text);
 }
@@ -130,6 +191,12 @@ button, input, select, textarea { font-family: inherit; }
     font-size: 9pt;
     font-weight: 400;
 }
+.ov-profile--experience .ov-app-shell__title {
+    color: #ffffff;
+    font-size: 19pt;
+    font-weight: 600;
+}
+.ov-profile--experience .ov-app-shell__subtitle { color: rgba(255,255,255,.82); font-size: 10pt; }
 .ov-app-shell__header-actions {
     justify-content: flex-end;
     gap: var(--ov-space-xs);
@@ -147,6 +214,10 @@ button, input, select, textarea { font-family: inherit; }
     position: relative;
     z-index: 1;
 }
+.ov-profile--experience .ov-app-shell__navigation {
+    padding-inline: 30px;
+    box-shadow: 0 2px 8px rgba(23, 50, 74, 0.05);
+}
 
 .ov-app-shell__navigation a,
 .ov-app-shell__navigation button,
@@ -162,9 +233,13 @@ button, input, select, textarea { font-family: inherit; }
     color: var(--ov-colour-muted);
     text-decoration: none;
     font: inherit;
-    font-weight: 400;
+    font-weight: 500;
     cursor: pointer;
 }
+
+.ov-profile--experience .ov-app-shell__navigation a,
+.ov-profile--experience .ov-app-shell__navigation button,
+.ov-profile--experience .ov-shell-nav-item { padding-inline: 18px; }
 
 .ov-app-shell__navigation a:hover,
 .ov-app-shell__navigation button:hover,
@@ -191,6 +266,14 @@ button, input, select, textarea { font-family: inherit; }
     height: 3px;
     background: var(--ov-colour-primary);
 }
+.ov-profile--experience .ov-app-shell__navigation .active::after,
+.ov-profile--experience .ov-app-shell__navigation [aria-current="page"]::after,
+.ov-profile--experience .ov-shell-nav-item--active::after {
+    left: 14px;
+    right: 14px;
+    height: 4px;
+    border-radius: 4px 4px 0 0;
+}
 
 .ov-app-shell__content {
     min-width: 0;
@@ -208,6 +291,7 @@ button, input, select, textarea { font-family: inherit; }
     font-size: 9pt;
     font-weight: 400;
 }
+.ov-profile--experience .ov-app-shell__footer { min-height: 44px; padding-inline: 30px; }
 
 .ov-shell-footer-content {
     width: 100%;
@@ -222,13 +306,18 @@ button, input, select, textarea { font-family: inherit; }
     height: 40px;
     display: grid;
     place-items: center;
-    border-radius: 8px;
+    border-radius: var(--ov-radius-md);
     background: var(--ov-colour-primary);
     color: white;
     font-family: "Segoe UI", Arial, sans-serif;
     font-size: 11pt;
     font-weight: 700;
     letter-spacing: -0.5px;
+}
+.ov-profile--experience .ov-shell-brand-mark {
+    background: #ffffff;
+    color: var(--ov-colour-primary);
+    box-shadow: 0 4px 12px rgba(0,0,0,.10);
 }
 
 /* OVP-010–013 – Page layouts */
@@ -237,6 +326,7 @@ button, input, select, textarea { font-family: inherit; }
     margin: 0 auto;
     padding: 22px 24px 28px;
 }
+.ov-profile--experience .ov-page { padding: 34px 30px 44px; }
 
 .ov-page__header {
     min-height: 44px;
@@ -245,23 +335,29 @@ button, input, select, textarea { font-family: inherit; }
     gap: var(--ov-space-lg);
     margin-bottom: 16px;
 }
+.ov-profile--experience .ov-page__header { margin-bottom: 24px; }
 
 .ov-page__heading { min-width: 0; }
 .ov-page__heading h1 {
     margin: 0;
-    font-size: 18pt;
-    font-weight: 300;
+    font-size: var(--ov-page-title-size);
+    font-weight: 400;
     letter-spacing: -0.2px;
     line-height: 1.2;
     color: var(--ov-colour-text);
+}
+.ov-profile--experience .ov-page__heading h1 {
+    font-weight: 600;
+    letter-spacing: -0.6px;
 }
 .ov-page__heading p {
     max-width: 900px;
     margin: 5px 0 0;
     color: var(--ov-colour-muted);
-    font-size: 10pt;
-    line-height: 1.35;
+    font-size: var(--ov-page-description-size);
+    line-height: 1.45;
 }
+.ov-profile--experience .ov-page__heading p { margin-top: 8px; max-width: 780px; }
 .ov-page__actions {
     justify-content: flex-end;
     gap: var(--ov-space-sm);
@@ -279,6 +375,10 @@ button, input, select, textarea { font-family: inherit; }
     padding: 6px 0 10px;
     border-bottom: 1px solid var(--ov-colour-border);
 }
+.ov-profile--experience .ov-list-page__toolbar {
+    margin-bottom: 16px;
+    padding: 10px 0 14px;
+}
 
 .ov-list-page__results {
     min-width: 0;
@@ -287,6 +387,10 @@ button, input, select, textarea { font-family: inherit; }
     border-radius: var(--ov-radius-sm);
     box-shadow: var(--ov-shadow-surface);
     overflow: hidden;
+}
+.ov-profile--experience .ov-list-page__results {
+    border-radius: var(--ov-radius-md);
+    border-color: rgba(175, 201, 219, .8);
 }
 
 .ov-list-page__pagination {
@@ -306,11 +410,15 @@ button, input, select, textarea { font-family: inherit; }
 }
 .ov-detail-page__content {
     min-width: 0;
-    padding: 18px 20px;
+    padding: var(--ov-surface-padding);
     background: var(--ov-colour-surface);
     border: 1px solid var(--ov-colour-border);
     border-radius: var(--ov-radius-sm);
     box-shadow: var(--ov-shadow-surface);
+}
+.ov-profile--experience .ov-detail-page__content {
+    border-radius: var(--ov-radius-md);
+    border-color: rgba(175, 201, 219, .8);
 }
 .ov-detail-page__footer-actions {
     justify-content: flex-end;
@@ -338,6 +446,7 @@ button, input, select, textarea { font-family: inherit; }
     border-radius: var(--ov-radius-sm);
     box-shadow: var(--ov-shadow-surface);
 }
+.ov-profile--experience .ov-builder-page__workspace { border-radius: var(--ov-radius-md); }
 
 .ov-builder-page__workspace--two-pane { grid-template-columns: minmax(230px, 285px) minmax(0, 1fr); }
 .ov-builder-page__workspace--three-pane { grid-template-columns: minmax(230px, 285px) minmax(0, 1fr) minmax(250px, 320px); }
@@ -346,6 +455,8 @@ button, input, select, textarea { font-family: inherit; }
     padding: 14px;
     background: var(--ov-colour-surface-soft);
 }
+.ov-profile--experience .ov-builder-page__navigation,
+.ov-profile--experience .ov-builder-page__inspector { padding: 20px; }
 .ov-builder-page__navigation { border-right: 1px solid var(--ov-colour-border); }
 .ov-builder-page__inspector { border-left: 1px solid var(--ov-colour-border); }
 .ov-builder-page__canvas {
@@ -353,6 +464,7 @@ button, input, select, textarea { font-family: inherit; }
     padding: 16px;
     background: var(--ov-colour-surface);
 }
+.ov-profile--experience .ov-builder-page__canvas { padding: 24px; }
 
 .ov-layout-placeholder {
     min-height: 80px;
@@ -364,6 +476,11 @@ button, input, select, textarea { font-family: inherit; }
     border: 1px dashed var(--ov-colour-border-strong);
     border-radius: var(--ov-radius-sm);
 }
+.ov-profile--experience .ov-layout-placeholder {
+    min-height: 110px;
+    padding: 20px 22px;
+    border-radius: var(--ov-radius-md);
+}
 
 .ov-list-preview-row {
     display: grid;
@@ -374,12 +491,28 @@ button, input, select, textarea { font-family: inherit; }
     padding: 8px 12px;
     border-bottom: 1px solid #edf0f2;
 }
+.ov-profile--experience .ov-list-preview-row { min-height: 52px; padding: 10px 16px; }
 .ov-list-preview-row:last-child { border-bottom: 0; }
 .ov-list-preview-row strong { font-weight: 600; }
 .ov-list-preview-row span { color: var(--ov-colour-muted); }
 
+.ov-demo-section {
+    padding: 20px;
+    background: var(--ov-colour-surface);
+    border: 1px solid var(--ov-colour-border);
+    border-radius: var(--ov-radius-md);
+    margin-bottom: 16px;
+}
+.ov-profile--experience .ov-demo-section {
+    padding: 28px;
+    border-color: rgba(175, 201, 219, .75);
+    box-shadow: var(--ov-shadow-surface);
+}
+
 @media (max-width: 900px) {
-    :root { --ov-shell-header-height: auto; }
+    :root,
+    .ov-profile--manager,
+    .ov-profile--experience { --ov-shell-header-height: auto; }
 
     .ov-app-shell__header,
     .ov-page__header {
@@ -399,19 +532,12 @@ button, input, select, textarea { font-family: inherit; }
     .ov-shell-nav-item { flex: 0 0 auto; }
     .ov-app-shell__footer { padding: 8px 16px; }
     .ov-shell-footer-content { align-items: flex-start; flex-direction: column; gap: 2px; }
-    .ov-page { padding: 18px 16px 22px; }
+    .ov-page,
+    .ov-profile--experience .ov-page { padding: 18px 16px 22px; }
     .ov-builder-page__workspace--three-pane,
     .ov-builder-page__workspace--two-pane { grid-template-columns: 1fr; }
     .ov-builder-page__navigation,
     .ov-builder-page__inspector { border: 0; border-bottom: 1px solid var(--ov-colour-border); }
     .ov-builder-page__inspector { border-top: 1px solid var(--ov-colour-border); border-bottom: 0; }
     .ov-list-preview-row { grid-template-columns: 1fr; gap: 2px; }
-}
-
-.ov-demo-section {
-    padding: 20px;
-    background: var(--ov-colour-surface);
-    border: 1px solid var(--ov-colour-border);
-    border-radius: var(--ov-radius-md);
-    margin-bottom: 16px;
 }
