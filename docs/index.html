@@ -1,16 +1,26 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>OneVision.UI Demo</title>
-  <style>body{font-family:Segoe UI,Arial,sans-serif;background:#f4f6f8;color:#212b32;margin:0;padding:48px}main{max-width:760px;margin:auto;background:#fff;border:1px solid #d8dde2;border-radius:8px;padding:32px}h1{font-weight:300;color:#005eb8;margin-top:0}</style>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OneVision.UI Component Library</title>
+    <base href="/OneVision.UI.Demo/" />
+    <link rel="stylesheet" href="_content/MudBlazor/MudBlazor.min.css" />
+    <link rel="stylesheet" href="_content/OneVision.UI/onevision.css" />
+    <link rel="stylesheet" href="css/app.css" />
 </head>
 <body>
-  <main>
-    <h1>OneVision.UI</h1>
-    <p>The public component gallery host is configured.</p>
-    <p>The compiled Blazor WebAssembly gallery will replace this page when the private UI repository publishes its next build.</p>
-  </main>
+    <div id="app">
+        <div class="ov-gallery-loading">Loading OneVision.UI…</div>
+    </div>
+
+    <div id="blazor-error-ui">
+        An unexpected error occurred.
+        <a href="." class="reload">Reload</a>
+        <a class="dismiss">×</a>
+    </div>
+
+    <script src="_content/MudBlazor/MudBlazor.min.js"></script>
+    <script src="_framework/blazor.webassembly.js"></script>
 </body>
 </html>

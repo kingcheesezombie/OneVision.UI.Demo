@@ -1,0 +1,57 @@
+:root {
+    --ov-font-family: "Segoe UI", Arial, sans-serif;
+    --ov-font-size-body: 10pt;
+    --ov-colour-primary: #005eb8;
+    --ov-colour-primary-hover: #004b93;
+    --ov-colour-text: #212b32;
+    --ov-colour-muted: #4c6272;
+    --ov-colour-border: #d8dde2;
+    --ov-colour-surface: #ffffff;
+    --ov-colour-background: #f4f6f8;
+    --ov-radius-sm: 4px;
+    --ov-radius-md: 6px;
+    --ov-space-xs: 4px;
+    --ov-space-sm: 8px;
+    --ov-space-md: 12px;
+    --ov-space-lg: 20px;
+}
+
+html, body {
+    font-family: var(--ov-font-family);
+    font-size: var(--ov-font-size-body);
+    color: var(--ov-colour-text);
+    background: var(--ov-colour-background);
+}
+
+.ov-button {
+    text-transform: none !important;
+    letter-spacing: normal !important;
+    border-radius: var(--ov-radius-sm) !important;
+    min-height: 32px;
+}
+
+.ov-status-pill {
+    display: inline-flex;
+    align-items: center;
+    min-height: 22px;
+    padding: 2px 8px;
+    border-radius: 999px;
+    font-size: 9pt;
+    font-weight: 600;
+    line-height: 1;
+    white-space: nowrap;
+}
+
+.ov-status-pill--neutral { background: #e8edee; color: #354550; }
+.ov-status-pill--info { background: #e5f3fb; color: #005eb8; }
+.ov-status-pill--success { background: #e5f4eb; color: #00662f; }
+.ov-status-pill--warning { background: #fff4ce; color: #7a5500; }
+.ov-status-pill--danger { background: #fbe8e7; color: #b10e1e; }
+
+.ov-demo-section {
+    padding: 20px;
+    background: var(--ov-colour-surface);
+    border: 1px solid var(--ov-colour-border);
+    border-radius: var(--ov-radius-md);
+    margin-bottom: 16px;
+}
