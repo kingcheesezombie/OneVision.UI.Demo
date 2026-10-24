@@ -1,0 +1,134 @@
+.ov-composer-recipes {
+    margin-bottom: 18px;
+}
+
+.ov-recipe-row {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 8px;
+}
+
+.ov-recipe-card {
+    display: flex;
+    min-height: 78px;
+    flex-direction: column;
+    gap: 5px;
+    padding: 11px 12px;
+    border: 1px solid var(--ov-colour-border);
+    border-radius: var(--ov-radius-md);
+    background: #fff;
+    color: inherit;
+    font: inherit;
+    text-align: left;
+    cursor: pointer;
+}
+
+.ov-recipe-card:hover {
+    border-color: #9fbdd9;
+    background: #fbfdff;
+}
+
+.ov-recipe-card strong {
+    font-weight: 500;
+}
+
+.ov-recipe-card small {
+    color: var(--ov-colour-muted);
+}
+
+.ov-composer-layout {
+    display: grid;
+    grid-template-columns: minmax(220px, .7fr) minmax(300px, 1fr) minmax(280px, .9fr);
+    gap: 12px;
+}
+
+.ov-composer-panel {
+    min-width: 0;
+    padding: 14px;
+    border: 1px solid var(--ov-colour-border);
+    border-radius: var(--ov-radius-md);
+    background: #fff;
+}
+
+.ov-composer-pattern-select {
+    width: 100%;
+    max-width: none;
+}
+
+.ov-composer-selection-card {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    margin-top: 12px;
+    padding: 12px;
+    border-radius: var(--ov-radius-sm);
+    background: #f7f8fa;
+}
+
+.ov-composer-selection-card strong {
+    font-weight: 500;
+}
+
+.ov-composer-selection-card code,
+.ov-composer-component-row code {
+    color: var(--ov-colour-muted);
+    font-size: 8pt;
+}
+
+.ov-composer-selection-card span,
+.ov-composer-component-row small {
+    color: var(--ov-colour-muted);
+    font-size: 8.5pt;
+}
+
+.ov-composer-component-list {
+    max-height: 430px;
+    margin-top: 10px;
+    overflow-y: auto;
+    border-top: 1px solid var(--ov-colour-border);
+}
+
+.ov-composer-component-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 9px;
+    padding: 9px 4px;
+    border-bottom: 1px solid #edf0f2;
+}
+
+.ov-composer-component-row > span {
+    display: flex;
+    min-width: 0;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.ov-composer-component-row strong {
+    font-weight: 500;
+}
+
+.ov-composer-brief {
+    min-height: 220px;
+    white-space: pre-wrap;
+}
+
+@media (max-width: 1180px) {
+    .ov-composer-layout {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .ov-composer-panel:last-child {
+        grid-column: 1 / -1;
+    }
+}
+
+@media (max-width: 820px) {
+    .ov-recipe-row,
+    .ov-composer-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .ov-composer-panel:last-child {
+        grid-column: auto;
+    }
+}
