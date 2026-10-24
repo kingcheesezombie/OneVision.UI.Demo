@@ -1,0 +1,33 @@
+.ov-pattern-demo--focused {
+    max-width: 820px;
+}
+
+.ov-focused-scope {
+    padding: 4px 0;
+}
+
+.ov-focused-scope__title {
+    margin-bottom: 10px;
+    font-size: 10pt;
+    font-weight: 600;
+    color: var(--ov-colour-text);
+}
+
+.ov-focused-scope__sample {
+    display: grid;
+    grid-template-columns: auto auto 1fr;
+    gap: 12px;
+    align-items: center;
+    margin-top: 16px;
+    padding: 12px 14px;
+    border: 1px solid var(--ov-colour-border);
+    border-radius: var(--ov-radius-sm);
+    background: #fafbfc;
+}
+
+@media (max-width: 760px) {
+    .ov-focused-scope__sample {
+        grid-template-columns: 1fr;
+        gap: 4px;
+    }
+}
