@@ -1,0 +1,103 @@
+.ov-gallery-brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.ov-gallery-brand__mark {
+    width: 28px;
+    height: 28px;
+    display: grid;
+    place-items: center;
+    border-radius: 6px;
+    background: var(--ov-colour-primary);
+    color: #fff;
+    font-size: 8.5pt;
+    font-weight: 700;
+    letter-spacing: -.2px;
+}
+
+.ov-profile--experience .ov-gallery-brand__mark {
+    background: rgba(255,255,255,.96);
+    color: var(--ov-colour-primary);
+}
+
+.ov-library-search-wrap--fluent {
+    position: relative;
+}
+
+.ov-library-search-icon {
+    position: absolute;
+    left: 27px;
+    top: 50%;
+    z-index: 2;
+    transform: translateY(-50%);
+    color: var(--ov-colour-muted);
+    pointer-events: none;
+}
+
+.ov-library-search-wrap--fluent .mud-input-slot {
+    padding-left: 34px !important;
+}
+
+.ov-gallery-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    padding: 0 8px 12px;
+}
+
+.ov-gallery-nav-link {
+    min-height: 36px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 7px 10px;
+    border-radius: 4px;
+    color: var(--ov-colour-muted);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.ov-gallery-nav-link:hover {
+    background: #f5f5f5;
+    color: var(--ov-colour-text);
+}
+
+.ov-gallery-nav-link.active {
+    background: var(--ov-colour-primary-soft);
+    color: var(--ov-colour-primary);
+    font-weight: 600;
+}
+
+.ov-gallery-nav-link--secondary {
+    min-height: 32px;
+    padding-left: 16px;
+    font-size: 9.5pt;
+}
+
+.ov-profile--experience .ov-gallery-nav-link {
+    min-height: 40px;
+    border-radius: 6px;
+}
+
+.ov-profile--experience .ov-gallery-drawer {
+    background: rgba(255,255,255,.98);
+}
+
+.ov-profile--manager .ov-profile-switch {
+    border-radius: 6px;
+    background: #f5f5f5;
+}
+
+.ov-profile--manager .ov-profile-switch__button {
+    border-radius: 4px;
+}
+
+.ov-profile--experience .ov-profile-switch {
+    border-radius: 8px;
+}
+
+.ov-profile--experience .ov-profile-switch__button {
+    border-radius: 6px;
+}

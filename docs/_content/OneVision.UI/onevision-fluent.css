@@ -1,0 +1,277 @@
+/* OVP-000 v1.4 – Fluent-inspired OneVision visual language.
+   Load after onevision.css. MudBlazor remains an implementation detail. */
+
+:root,
+.ov-profile--manager {
+    --ov-font-family: "Segoe UI Variable Text", "Segoe UI", Arial, sans-serif;
+    --ov-font-weight-body: 400;
+    --ov-colour-primary: #005eb8;
+    --ov-colour-primary-hover: #004c93;
+    --ov-colour-primary-soft: #ebf3fc;
+    --ov-colour-accent: #0f6cbd;
+    --ov-colour-text: #242424;
+    --ov-colour-muted: #616161;
+    --ov-colour-subtle: #8a8886;
+    --ov-colour-border: #d1d1d1;
+    --ov-colour-border-strong: #bdbdbd;
+    --ov-colour-surface: #ffffff;
+    --ov-colour-surface-soft: #fafafa;
+    --ov-colour-background: #f5f5f5;
+    --ov-colour-header: #ffffff;
+    --ov-colour-nav: #ffffff;
+    --ov-shadow-header: 0 1px 2px rgba(0, 0, 0, .06);
+    --ov-shadow-surface: 0 1px 2px rgba(0, 0, 0, .06);
+    --ov-radius-sm: 4px;
+    --ov-radius-md: 8px;
+    --ov-radius-lg: 12px;
+}
+
+.ov-profile--experience {
+    --ov-font-family: "Segoe UI Variable Text", "Segoe UI", Arial, sans-serif;
+    --ov-font-weight-body: 400;
+    --ov-colour-primary: #005eb8;
+    --ov-colour-primary-hover: #004c93;
+    --ov-colour-primary-soft: #e7f1fb;
+    --ov-colour-accent: #0f6cbd;
+    --ov-colour-text: #242424;
+    --ov-colour-muted: #5c5c5c;
+    --ov-colour-subtle: #8a8886;
+    --ov-colour-border: #d6e2ee;
+    --ov-colour-border-strong: #b8cee1;
+    --ov-colour-surface: #ffffff;
+    --ov-colour-surface-soft: #f7fbff;
+    --ov-colour-background: #f3f8fd;
+    --ov-colour-header: #005eb8;
+    --ov-colour-nav: rgba(255,255,255,.98);
+    --ov-shadow-header: 0 2px 8px rgba(0, 61, 116, .14);
+    --ov-shadow-surface: 0 4px 16px rgba(0, 61, 116, .08);
+    --ov-radius-sm: 6px;
+    --ov-radius-md: 10px;
+    --ov-radius-lg: 16px;
+}
+
+/* Fluent focus and interaction language */
+.ov-profile--manager :focus-visible,
+.ov-profile--experience :focus-visible {
+    outline: 2px solid #0f6cbd;
+    outline-offset: 2px;
+}
+
+.ov-profile--manager .mud-ripple,
+.ov-profile--experience .mud-ripple {
+    border-radius: inherit;
+}
+
+/* Buttons */
+.ov-profile--manager .mud-button-root,
+.ov-profile--experience .mud-button-root,
+.ov-button {
+    text-transform: none !important;
+    letter-spacing: normal !important;
+    font-weight: 600 !important;
+    box-shadow: none !important;
+}
+
+.ov-profile--manager .mud-button-root { border-radius: 4px !important; }
+.ov-profile--experience .mud-button-root { border-radius: 6px !important; }
+
+.ov-profile--manager .mud-button-filled-primary:hover,
+.ov-profile--experience .mud-button-filled-primary:hover {
+    filter: brightness(.94);
+}
+
+.ov-button__semantic-icon {
+    margin-right: 6px;
+    flex: 0 0 auto;
+}
+
+/* Fluent System Icons */
+.ov-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    flex: 0 0 20px;
+    color: currentColor;
+    vertical-align: middle;
+}
+
+.ov-icon svg {
+    width: 20px;
+    height: 20px;
+    fill: currentColor;
+}
+
+/* Inputs */
+.ov-profile--manager .mud-input-outlined-border,
+.ov-profile--experience .mud-input-outlined-border {
+    border-color: var(--ov-colour-border-strong) !important;
+}
+
+.ov-profile--manager .mud-input-root,
+.ov-profile--experience .mud-input-root {
+    border-radius: var(--ov-radius-sm) !important;
+    background: #fff;
+}
+
+.ov-profile--manager .mud-input-control:hover .mud-input-outlined-border,
+.ov-profile--experience .mud-input-control:hover .mud-input-outlined-border {
+    border-color: #8a8886 !important;
+}
+
+.ov-profile--manager .mud-input-control.mud-input-focused .mud-input-outlined-border,
+.ov-profile--experience .mud-input-control.mud-input-focused .mud-input-outlined-border {
+    border-color: #0f6cbd !important;
+    border-width: 2px !important;
+}
+
+.ov-profile--manager .mud-input-label,
+.ov-profile--experience .mud-input-label {
+    color: var(--ov-colour-muted);
+    font-weight: 500;
+}
+
+/* Surfaces */
+.ov-profile--manager .mud-paper,
+.ov-profile--experience .mud-paper {
+    background-color: var(--ov-colour-surface);
+    border-color: var(--ov-colour-border);
+}
+
+.ov-profile--manager .mud-card,
+.ov-profile--manager .mud-dialog,
+.ov-profile--manager .mud-popover {
+    border-radius: 8px !important;
+}
+
+.ov-profile--experience .mud-card,
+.ov-profile--experience .mud-dialog,
+.ov-profile--experience .mud-popover {
+    border-radius: 12px !important;
+}
+
+.ov-profile--manager .mud-dialog,
+.ov-profile--experience .mud-dialog {
+    box-shadow: 0 8px 32px rgba(0,0,0,.14) !important;
+}
+
+/* Tables and grids */
+.ov-profile--manager .mud-table-head,
+.ov-profile--experience .mud-table-head {
+    background: #fafafa;
+}
+
+.ov-profile--manager .mud-table-cell,
+.ov-profile--experience .mud-table-cell {
+    border-bottom-color: #e5e5e5 !important;
+}
+
+.ov-profile--manager .mud-table-row:hover,
+.ov-profile--experience .mud-table-row:hover {
+    background: #f5f5f5 !important;
+}
+
+.ov-profile--manager .mud-table-head .mud-table-cell,
+.ov-profile--experience .mud-table-head .mud-table-cell {
+    color: #424242;
+    font-weight: 600;
+}
+
+/* Tabs */
+.ov-profile--manager .mud-tabs-tabbar,
+.ov-profile--experience .mud-tabs-tabbar {
+    border-bottom: 1px solid var(--ov-colour-border);
+}
+
+.ov-profile--manager .mud-tab-slider,
+.ov-profile--experience .mud-tab-slider {
+    height: 2px !important;
+    background: #0f6cbd !important;
+}
+
+/* Navigation */
+.ov-profile--manager .mud-nav-link,
+.ov-profile--experience .mud-nav-link {
+    border-radius: 4px;
+    color: var(--ov-colour-muted);
+}
+
+.ov-profile--manager .mud-nav-link:hover,
+.ov-profile--experience .mud-nav-link:hover {
+    background: #f5f5f5;
+    color: var(--ov-colour-text);
+}
+
+.ov-profile--manager .mud-nav-link.active,
+.ov-profile--experience .mud-nav-link.active {
+    background: var(--ov-colour-primary-soft);
+    color: var(--ov-colour-primary);
+    font-weight: 600;
+}
+
+/* Chips / status */
+.ov-profile--manager .mud-chip,
+.ov-profile--experience .mud-chip {
+    border-radius: 999px;
+    font-weight: 600;
+}
+
+/* Shell */
+.ov-profile--manager .ov-app-shell__header {
+    border-top: 0;
+    border-bottom: 1px solid var(--ov-colour-border);
+}
+
+.ov-profile--experience .ov-app-shell__header {
+    background: linear-gradient(120deg, #004c93 0%, #005eb8 48%, #0f6cbd 100%);
+    box-shadow: var(--ov-shadow-header);
+}
+
+.ov-profile--manager .ov-app-shell__navigation,
+.ov-profile--experience .ov-app-shell__navigation {
+    gap: 4px;
+}
+
+.ov-profile--manager .ov-app-shell__navigation a,
+.ov-profile--manager .ov-app-shell__navigation button,
+.ov-profile--manager .ov-shell-nav-item,
+.ov-profile--experience .ov-app-shell__navigation a,
+.ov-profile--experience .ov-app-shell__navigation button,
+.ov-profile--experience .ov-shell-nav-item {
+    border-radius: 4px;
+    margin: 4px 0;
+    min-height: calc(var(--ov-shell-nav-height) - 8px);
+}
+
+.ov-profile--manager .ov-app-shell__navigation .active::after,
+.ov-profile--manager .ov-app-shell__navigation [aria-current="page"]::after,
+.ov-profile--manager .ov-shell-nav-item--active::after,
+.ov-profile--experience .ov-app-shell__navigation .active::after,
+.ov-profile--experience .ov-app-shell__navigation [aria-current="page"]::after,
+.ov-profile--experience .ov-shell-nav-item--active::after {
+    display: none;
+}
+
+.ov-profile--manager .ov-app-shell__navigation .active,
+.ov-profile--manager .ov-app-shell__navigation [aria-current="page"],
+.ov-profile--manager .ov-shell-nav-item--active,
+.ov-profile--experience .ov-app-shell__navigation .active,
+.ov-profile--experience .ov-app-shell__navigation [aria-current="page"],
+.ov-profile--experience .ov-shell-nav-item--active {
+    background: var(--ov-colour-primary-soft);
+}
+
+/* Experience keeps more expression, but follows Fluent surface discipline. */
+.ov-profile--experience .ov-list-page__results,
+.ov-profile--experience .ov-detail-page__content,
+.ov-profile--experience .ov-builder-page__navigation,
+.ov-profile--experience .ov-builder-page__canvas,
+.ov-profile--experience .ov-builder-page__inspector {
+    box-shadow: var(--ov-shadow-surface);
+    border-radius: var(--ov-radius-md);
+}
+
+.ov-profile--experience .ov-page__heading h1 {
+    letter-spacing: -.45px;
+}
