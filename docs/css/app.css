@@ -31,12 +31,19 @@ body {
 }
 
 .ov-gallery-main {
-    margin-left: 300px;
+    margin-left: 300px !important;
+    width: calc(100% - 300px) !important;
+    min-width: 0;
+    box-sizing: border-box;
 }
 
 .ov-gallery-content {
+    max-width: 100%;
+    box-sizing: border-box;
     padding-top: 28px;
+    padding-right: 28px;
     padding-bottom: 48px;
+    padding-left: 28px;
 }
 
 .ov-gallery-page-title {
@@ -284,7 +291,13 @@ body {
     }
 
     .ov-gallery-main {
-        margin-left: 250px;
+        margin-left: 250px !important;
+        width: calc(100% - 250px) !important;
+    }
+
+    .ov-gallery-content {
+        padding-right: 20px;
+        padding-left: 20px;
     }
 
     .ov-pattern-page-heading,
