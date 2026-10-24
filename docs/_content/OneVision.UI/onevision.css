@@ -48,6 +48,137 @@ html, body {
 .ov-status-pill--warning { background: #fff4ce; color: #7a5500; }
 .ov-status-pill--danger { background: #fbe8e7; color: #b10e1e; }
 
+.ov-app-shell {
+    min-height: 100vh;
+    display: grid;
+    grid-template-rows: auto auto 1fr auto;
+    background: var(--ov-colour-background);
+}
+
+.ov-app-shell__header {
+    min-height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--ov-space-md);
+    padding: var(--ov-space-sm) var(--ov-space-lg);
+    background: var(--ov-colour-surface);
+    border-bottom: 1px solid var(--ov-colour-border);
+}
+
+.ov-app-shell__identity,
+.ov-app-shell__header-actions,
+.ov-page__header,
+.ov-page__actions,
+.ov-list-page__toolbar,
+.ov-detail-page__status,
+.ov-detail-page__footer-actions,
+.ov-builder-page__toolbar {
+    display: flex;
+    align-items: center;
+}
+
+.ov-app-shell__identity { gap: var(--ov-space-md); min-width: 0; }
+.ov-app-shell__logo { display: flex; align-items: center; flex: 0 0 auto; }
+.ov-app-shell__titles { min-width: 0; }
+.ov-app-shell__title { font-size: 15pt; font-weight: 600; line-height: 1.2; }
+.ov-app-shell__subtitle { margin-top: 2px; color: var(--ov-colour-muted); font-size: 9pt; }
+.ov-app-shell__header-actions { justify-content: flex-end; gap: var(--ov-space-sm); }
+
+.ov-app-shell__navigation {
+    min-height: 38px;
+    display: flex;
+    align-items: center;
+    padding: 0 var(--ov-space-lg);
+    background: var(--ov-colour-surface);
+    border-bottom: 1px solid var(--ov-colour-border);
+}
+
+.ov-app-shell__content { min-width: 0; }
+.ov-app-shell__footer {
+    padding: var(--ov-space-sm) var(--ov-space-lg);
+    color: var(--ov-colour-muted);
+    background: var(--ov-colour-surface);
+    border-top: 1px solid var(--ov-colour-border);
+    font-size: 9pt;
+}
+
+.ov-page {
+    width: 100%;
+    padding: var(--ov-space-lg);
+    box-sizing: border-box;
+}
+
+.ov-page__header {
+    justify-content: space-between;
+    gap: var(--ov-space-lg);
+    margin-bottom: var(--ov-space-md);
+}
+
+.ov-page__heading { min-width: 0; }
+.ov-page__heading h1 { margin: 0; font-size: 17pt; font-weight: 400; line-height: 1.25; }
+.ov-page__heading p { margin: var(--ov-space-xs) 0 0; color: var(--ov-colour-muted); }
+.ov-page__actions { justify-content: flex-end; gap: var(--ov-space-sm); flex-wrap: wrap; }
+.ov-page__content { min-width: 0; }
+
+.ov-list-page__toolbar {
+    justify-content: space-between;
+    gap: var(--ov-space-sm);
+    flex-wrap: wrap;
+    margin-bottom: var(--ov-space-sm);
+}
+
+.ov-list-page__results { min-width: 0; }
+.ov-list-page__pagination {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: var(--ov-space-sm);
+}
+
+.ov-detail-page__status { gap: var(--ov-space-xs); margin-top: var(--ov-space-sm); }
+.ov-detail-page__content { min-width: 0; }
+.ov-detail-page__footer-actions {
+    justify-content: flex-end;
+    gap: var(--ov-space-sm);
+    margin-top: var(--ov-space-lg);
+    padding-top: var(--ov-space-md);
+    border-top: 1px solid var(--ov-colour-border);
+}
+
+.ov-builder-page__toolbar {
+    gap: var(--ov-space-sm);
+    margin-bottom: var(--ov-space-sm);
+}
+
+.ov-builder-page__workspace {
+    display: grid;
+    min-height: 480px;
+    overflow: hidden;
+    background: var(--ov-colour-surface);
+    border: 1px solid var(--ov-colour-border);
+    border-radius: var(--ov-radius-md);
+}
+
+.ov-builder-page__workspace--two-pane { grid-template-columns: minmax(220px, 280px) minmax(0, 1fr); }
+.ov-builder-page__workspace--three-pane { grid-template-columns: minmax(220px, 280px) minmax(0, 1fr) minmax(240px, 320px); }
+.ov-builder-page__navigation,
+.ov-builder-page__inspector { padding: var(--ov-space-md); background: var(--ov-colour-surface); }
+.ov-builder-page__navigation { border-right: 1px solid var(--ov-colour-border); }
+.ov-builder-page__inspector { border-left: 1px solid var(--ov-colour-border); }
+.ov-builder-page__canvas { min-width: 0; padding: var(--ov-space-md); }
+
+@media (max-width: 900px) {
+    .ov-app-shell__header,
+    .ov-page__header { align-items: flex-start; flex-direction: column; }
+    .ov-app-shell__header-actions,
+    .ov-page__actions { width: 100%; justify-content: flex-start; }
+    .ov-builder-page__workspace--three-pane,
+    .ov-builder-page__workspace--two-pane { grid-template-columns: 1fr; }
+    .ov-builder-page__navigation,
+    .ov-builder-page__inspector { border: 0; border-bottom: 1px solid var(--ov-colour-border); }
+    .ov-builder-page__inspector { border-top: 1px solid var(--ov-colour-border); border-bottom: 0; }
+}
+
 .ov-demo-section {
     padding: 20px;
     background: var(--ov-colour-surface);
