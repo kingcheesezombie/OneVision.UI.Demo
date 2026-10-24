@@ -54,15 +54,50 @@
     border-bottom: 1px solid var(--ov-colour-border);
 }
 
+button.ov-demo-tab {
+    appearance: none;
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+    font: inherit;
+}
+
 .ov-demo-tab {
     padding: 8px 12px;
     color: var(--ov-colour-muted);
     font-size: 9pt;
 }
 
+.ov-demo-tab:hover {
+    color: var(--ov-colour-primary);
+    background: #f4f8fc;
+}
+
 .ov-demo-tab--active {
     color: var(--ov-colour-primary);
-    border-bottom: 2px solid var(--ov-colour-primary);
+    border-bottom: 2px solid var(--ov-colour-primary) !important;
+}
+
+.ov-demo-state-label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 14px;
+    padding: 8px 10px;
+    border: 1px solid var(--ov-colour-border);
+    border-radius: var(--ov-radius-sm);
+    background: #fafbfc;
+    font-size: 9pt;
+}
+
+.ov-demo-state-label span {
+    color: var(--ov-colour-muted);
+}
+
+.ov-demo-state-label code {
+    margin-left: auto;
+    color: var(--ov-colour-muted);
+    font-size: 8.5pt;
 }
 
 .ov-demo-form-grid {
@@ -104,6 +139,15 @@
     font-weight: 600;
 }
 
+.ov-demo-table tbody tr {
+    cursor: pointer;
+}
+
+.ov-demo-table tbody tr:hover,
+.ov-demo-table-row--selected {
+    background: #f4f8fc;
+}
+
 .ov-demo-pagination {
     display: flex;
     justify-content: space-between;
@@ -131,16 +175,33 @@
     padding: 18px;
 }
 
+button.ov-demo-list-row,
+button.ov-demo-palette-item,
+button.ov-demo-tree-node,
+button.ov-demo-canvas-node,
+button.ov-demo-metric {
+    appearance: none;
+    width: 100%;
+    font: inherit;
+    text-align: left;
+    cursor: pointer;
+}
+
 .ov-demo-list-row,
 .ov-demo-palette-item {
     margin-top: 6px;
     padding: 9px 10px;
     border-radius: var(--ov-radius-sm);
-    cursor: default;
 }
 
+button.ov-demo-list-row {
+    border: 0;
+    background: transparent;
+}
+
+.ov-demo-list-row:hover,
 .ov-demo-list-row--selected {
-    background: #e9f2fb;
+    background: #e9f2fb !important;
     color: var(--ov-colour-primary);
 }
 
@@ -149,6 +210,13 @@
     gap: 6px;
     margin-bottom: 20px;
     overflow-x: auto;
+}
+
+button.ov-demo-step {
+    appearance: none;
+    background: #fff;
+    cursor: pointer;
+    font: inherit;
 }
 
 .ov-demo-step {
@@ -161,6 +229,10 @@
     font-size: 9pt;
     border: 1px solid var(--ov-colour-border);
     border-radius: var(--ov-radius-sm);
+}
+
+.ov-demo-step:hover {
+    border-color: var(--ov-colour-primary);
 }
 
 .ov-demo-step span {
@@ -204,12 +276,23 @@
     background: #fafbfc;
 }
 
+button.ov-demo-tree-node {
+    border: 0;
+    background: transparent;
+}
+
 .ov-demo-tree-node {
     display: flex;
     align-items: center;
     gap: 7px;
     padding-top: 7px;
     padding-bottom: 7px;
+}
+
+.ov-demo-tree-node:hover,
+.ov-demo-tree-node--selected {
+    background: #e9f2fb !important;
+    color: var(--ov-colour-primary);
 }
 
 .ov-demo-inspector {
@@ -272,8 +355,22 @@
 }
 
 .ov-demo-palette-item {
+    display: block;
     background: #fff;
     border: 1px solid var(--ov-colour-border);
+}
+
+.ov-demo-palette-item:hover,
+.ov-demo-palette-item--selected {
+    border-color: var(--ov-colour-primary);
+    background: #e9f2fb;
+    color: var(--ov-colour-primary);
+}
+
+button.ov-demo-canvas-node {
+    width: auto;
+    text-align: center;
+    cursor: pointer;
 }
 
 .ov-demo-canvas-node {
@@ -284,6 +381,7 @@
     white-space: nowrap;
 }
 
+.ov-demo-canvas-node:hover,
 .ov-demo-canvas-node--selected {
     border-color: var(--ov-colour-primary);
     box-shadow: 0 0 0 2px rgba(0, 94, 184, .08);
@@ -306,6 +404,13 @@
     padding: 14px;
     border: 1px solid var(--ov-colour-border);
     border-radius: var(--ov-radius-sm);
+    background: #fff;
+}
+
+.ov-demo-metric:hover,
+.ov-demo-metric--selected {
+    border-color: var(--ov-colour-primary);
+    background: #f4f8fc;
 }
 
 .ov-demo-metric span {
@@ -394,10 +499,15 @@
     gap: 10px;
     padding: 11px 12px;
     border-bottom: 1px solid var(--ov-colour-border);
+    cursor: pointer;
 }
 
 .ov-demo-picker-row:last-child {
     border-bottom: 0;
+}
+
+.ov-demo-picker-row:hover {
+    background: #f4f8fc;
 }
 
 .ov-demo-picker-row span {
@@ -486,5 +596,14 @@
 
     .ov-demo-toolbar {
         flex-wrap: wrap;
+    }
+
+    .ov-demo-state-label {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .ov-demo-state-label code {
+        margin-left: 0;
     }
 }
