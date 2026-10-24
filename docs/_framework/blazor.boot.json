@@ -1,7 +1,7 @@
 {
   "mainAssemblyName": "OneVision.UI.Demo",
   "resources": {
-    "hash": "sha256-NcnAAeY699K5DlrK0kExGmph1b/y9OneNaLdjDwx0yA=",
+    "hash": "sha256-FWAaYK60IAMrNlzeOq64+fzYkoKNKG+Qu65sI6yCpj8=",
     "fingerprinting": {
       "Microsoft.AspNetCore.Components.0ucyksbqcq.wasm": "Microsoft.AspNetCore.Components.wasm",
       "Microsoft.AspNetCore.Components.Forms.bau7v9e2ym.wasm": "Microsoft.AspNetCore.Components.Forms.wasm",
@@ -43,8 +43,8 @@
       "System.Text.Json.ove3fcvlc4.wasm": "System.Text.Json.wasm",
       "System.Text.RegularExpressions.17ui7ipz45.wasm": "System.Text.RegularExpressions.wasm",
       "System.Private.CoreLib.b7no5o2t2o.wasm": "System.Private.CoreLib.wasm",
-      "OneVision.UI.mz7kr8xvfk.wasm": "OneVision.UI.wasm",
-      "OneVision.UI.Demo.q8j23hjhjg.wasm": "OneVision.UI.Demo.wasm",
+      "OneVision.UI.pir8e22x22.wasm": "OneVision.UI.wasm",
+      "OneVision.UI.Demo.vvw8jbema8.wasm": "OneVision.UI.Demo.wasm",
       "dotnet.js": "dotnet.js",
       "dotnet.native.hzfg37297t.js": "dotnet.native.js",
       "dotnet.native.gwaa25jr8v.wasm": "dotnet.native.wasm",
@@ -110,8 +110,8 @@
       "System.Text.Encodings.Web.qe6aheca69.wasm": "sha256-Dtii1gDtbIOl8J73+IwD0DWRdOCX1N4lpncJl74DQP4=",
       "System.Text.Json.ove3fcvlc4.wasm": "sha256-FL3cgZDmBnosYUG8VzH6VUnBnucFf9IVSFPg7IAcEy4=",
       "System.Text.RegularExpressions.17ui7ipz45.wasm": "sha256-XaizgE2AHLMI4BMlB5JbhidN86yXUUrKVDfhOQ93fmo=",
-      "OneVision.UI.mz7kr8xvfk.wasm": "sha256-clBh38kfMIZpvuN22YGdfXzsCzXphGWAcfNuAEXnIrQ=",
-      "OneVision.UI.Demo.q8j23hjhjg.wasm": "sha256-6gRXuc00BmhY0AFLiRx565vyBWfSdhqbMCAuQ712n+w="
+      "OneVision.UI.pir8e22x22.wasm": "sha256-r0w/pePpleDReWKeVztZQOoMwagVrC3WisM0blo6PIg=",
+      "OneVision.UI.Demo.vvw8jbema8.wasm": "sha256-e7f4Kg1HjDYD74BgmNFfkZ/uM0epocOlVkv9p5z4c60="
     },
     "libraryInitializers": {
       "_content/Microsoft.FluentUI.AspNetCore.Components/Microsoft.FluentUI.AspNetCore.Components.lib.module.js": "sha256-KyfiooohMk+1umjbXBxRZaOXMTo8AeNxYKtXOc+EFCg="
