@@ -1,12 +1,12 @@
 {
   "mainAssemblyName": "OneVision.UI.Demo",
   "resources": {
-    "hash": "sha256-kVCYZEo4aDz4OCamHmy9OYH2ptVeD4yUSJjDRfqcW68=",
+    "hash": "sha256-qcHBsTkpsB0QFQXi4PXMDyb0/TyMkhHyXUbfo9ft1bI=",
     "fingerprinting": {
-      "Microsoft.AspNetCore.Components.cddcu6yyj5.wasm": "Microsoft.AspNetCore.Components.wasm",
+      "Microsoft.AspNetCore.Components.61nngjv2xl.wasm": "Microsoft.AspNetCore.Components.wasm",
       "Microsoft.AspNetCore.Components.Forms.qeumai2z4n.wasm": "Microsoft.AspNetCore.Components.Forms.wasm",
-      "Microsoft.AspNetCore.Components.Web.jdmvy9m1yh.wasm": "Microsoft.AspNetCore.Components.Web.wasm",
-      "Microsoft.AspNetCore.Components.WebAssembly.my7i0fjxy3.wasm": "Microsoft.AspNetCore.Components.WebAssembly.wasm",
+      "Microsoft.AspNetCore.Components.Web.gekknpubgq.wasm": "Microsoft.AspNetCore.Components.Web.wasm",
+      "Microsoft.AspNetCore.Components.WebAssembly.ww1dbqkhw0.wasm": "Microsoft.AspNetCore.Components.WebAssembly.wasm",
       "Microsoft.Extensions.Configuration.ell6o7ap7i.wasm": "Microsoft.Extensions.Configuration.wasm",
       "Microsoft.Extensions.Configuration.Abstractions.f9jq6u05xu.wasm": "Microsoft.Extensions.Configuration.Abstractions.wasm",
       "Microsoft.Extensions.Configuration.Json.77nptesqpn.wasm": "Microsoft.Extensions.Configuration.Json.wasm",
@@ -40,8 +40,8 @@
       "System.Text.Json.ove3fcvlc4.wasm": "System.Text.Json.wasm",
       "System.Text.RegularExpressions.17ui7ipz45.wasm": "System.Text.RegularExpressions.wasm",
       "System.Private.CoreLib.u6ut936f00.wasm": "System.Private.CoreLib.wasm",
-      "OneVision.UI.00zz884vnp.wasm": "OneVision.UI.wasm",
-      "OneVision.UI.Demo.68w9zqexgi.wasm": "OneVision.UI.Demo.wasm",
+      "OneVision.UI.8lr1f1u50f.wasm": "OneVision.UI.wasm",
+      "OneVision.UI.Demo.gptca162gz.wasm": "OneVision.UI.Demo.wasm",
       "dotnet.js": "dotnet.js",
       "dotnet.native.hzfg37297t.js": "dotnet.native.js",
       "dotnet.native.gwaa25jr8v.wasm": "dotnet.native.wasm",
@@ -69,10 +69,10 @@
       "System.Private.CoreLib.u6ut936f00.wasm": "sha256-FvOLUQDravcro0EUjQfrRH5IZU17mwuNEMULUWLggfQ="
     },
     "assembly": {
-      "Microsoft.AspNetCore.Components.cddcu6yyj5.wasm": "sha256-UNvqbWHghreMd2NHSmb1V/nc3qYpfdBmjkc57fuc1nM=",
+      "Microsoft.AspNetCore.Components.61nngjv2xl.wasm": "sha256-WoA5rghSddAnGUGtuYhpT6LFja+48HTbp5CY2RFHtsk=",
       "Microsoft.AspNetCore.Components.Forms.qeumai2z4n.wasm": "sha256-cvUAnzbHW/dReZSw11+1/7zP0L3o3IlwkCUdTzcFZsM=",
-      "Microsoft.AspNetCore.Components.Web.jdmvy9m1yh.wasm": "sha256-+bYybQIZsVqp2UznJ2dyHRTOM2m7nXGDTXvENB1XKRE=",
-      "Microsoft.AspNetCore.Components.WebAssembly.my7i0fjxy3.wasm": "sha256-MvswB7fyuI2Rnzd53sEFAKe9KEYFFYCE+0qKlOFArfw=",
+      "Microsoft.AspNetCore.Components.Web.gekknpubgq.wasm": "sha256-uEARyJb1roSsXGgYNzmyrHItIOaTkwSx6tiZ8A4DCFA=",
+      "Microsoft.AspNetCore.Components.WebAssembly.ww1dbqkhw0.wasm": "sha256-8F3XI/fx5g1xnq/wPYnvb/RjHbLsHk3KS29adKWr+bQ=",
       "Microsoft.Extensions.Configuration.ell6o7ap7i.wasm": "sha256-0iZA+rfvr3lLmK5V18g0LZCU41c3mbTL9jNYRoavdB0=",
       "Microsoft.Extensions.Configuration.Abstractions.f9jq6u05xu.wasm": "sha256-AyL87FvJMf14Dcn8HeQ3n2veg/RQGVGCjfpJPt1RQC4=",
       "Microsoft.Extensions.Configuration.Json.77nptesqpn.wasm": "sha256-TUkUL2Leb3zmGe8ZZUHAzyb8vZoEzua1H8f8stc7xRw=",
@@ -104,8 +104,8 @@
       "System.Text.Encodings.Web.qe6aheca69.wasm": "sha256-Dtii1gDtbIOl8J73+IwD0DWRdOCX1N4lpncJl74DQP4=",
       "System.Text.Json.ove3fcvlc4.wasm": "sha256-FL3cgZDmBnosYUG8VzH6VUnBnucFf9IVSFPg7IAcEy4=",
       "System.Text.RegularExpressions.17ui7ipz45.wasm": "sha256-XaizgE2AHLMI4BMlB5JbhidN86yXUUrKVDfhOQ93fmo=",
-      "OneVision.UI.00zz884vnp.wasm": "sha256-8MOsicC6riAoJxKscejM0AfYGq0EU3xcY5nH8TuEYl4=",
-      "OneVision.UI.Demo.68w9zqexgi.wasm": "sha256-milSRdOoukys7lKVziJ4CAovNPPSaWJDAOb8So7tm7s="
+      "OneVision.UI.8lr1f1u50f.wasm": "sha256-7HTjSKGAGtt0B6YPhSSMC0UZDLaiLB4I6Z9sLcy3mfk=",
+      "OneVision.UI.Demo.gptca162gz.wasm": "sha256-ZO9mA0mMDTB7hcap7NZIdux81pRER3S9LsiMziPo8To="
     }
   },
   "cacheBootResources": true,
