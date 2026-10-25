@@ -55,6 +55,303 @@
 .ov-pagination[b-n9vv4yagv0]{display:flex;align-items:center;justify-content:flex-end;gap:var(--ov-space-sm);min-height:var(--ov-control-height);color:var(--ov-colour-muted)}.ov-pagination__summary[b-n9vv4yagv0]{margin-right:auto}.ov-pagination__actions[b-n9vv4yagv0]{display:flex;align-items:center;gap:4px}.ov-pagination__page[b-n9vv4yagv0]{min-width:92px;text-align:center;white-space:nowrap}@media(max-width:640px){.ov-pagination[b-n9vv4yagv0]{align-items:flex-start;flex-direction:column}.ov-pagination__summary[b-n9vv4yagv0]{margin-right:0}.ov-pagination__actions[b-n9vv4yagv0]{width:100%;justify-content:flex-end}}
 /* _content/OneVision.UI/Components/OVProcessStages.razor.rz.scp.css */
 .ov-process-stages[b-ptws70361r]{display:grid;gap:10px}.ov-process-stages__list[b-ptws70361r]{display:grid;gap:0;margin:0;padding:0;list-style:none}.ov-process-stages__stage[b-ptws70361r]{position:relative;display:grid;grid-template-columns:28px minmax(0,1fr) auto;gap:10px;align-items:start;min-height:58px;padding:7px 0}.ov-process-stages__marker[b-ptws70361r]{position:relative;z-index:2;display:flex;align-items:center;justify-content:center;width:26px;height:26px;border:1px solid var(--ov-colour-border-strong);border-radius:50%;background:var(--ov-colour-surface);color:var(--ov-colour-muted)}.ov-process-stages__connector[b-ptws70361r]{position:absolute;top:33px;bottom:-7px;left:13px;width:1px;background:var(--ov-colour-border)}.ov-process-stages__stage--running .ov-process-stages__marker[b-ptws70361r]{border-color:var(--ov-colour-primary);background:var(--ov-colour-primary-soft);color:var(--ov-colour-primary);box-shadow:0 0 0 3px var(--ov-colour-primary-soft)}.ov-process-stages__stage--complete .ov-process-stages__marker[b-ptws70361r]{color:#00662f;border-color:#78b88f}.ov-process-stages__stage--failed .ov-process-stages__marker[b-ptws70361r]{color:#a4262c;border-color:#d13438}.ov-process-stages__stage--warning .ov-process-stages__marker[b-ptws70361r]{color:#7a5500;border-color:#f0a30a}.ov-process-stages__stage--skipped[b-ptws70361r]{opacity:.72}.ov-process-stages__content[b-ptws70361r]{display:grid;gap:5px;min-width:0}.ov-process-stages__heading[b-ptws70361r]{display:flex;align-items:flex-start;justify-content:space-between;gap:8px}.ov-process-stages__heading>div[b-ptws70361r]{display:grid;gap:2px}.ov-process-stages__heading span[b-ptws70361r],.ov-process-stages__meta[b-ptws70361r],.ov-process-stages__message[b-ptws70361r]{color:var(--ov-colour-muted);font-size:var(--ov-font-size-caption)}.ov-process-stages__meta[b-ptws70361r]{display:flex;gap:10px;flex-wrap:wrap}.ov-process-stages__message[b-ptws70361r]{color:var(--ov-colour-text)}@media(max-width:620px){.ov-process-stages__stage[b-ptws70361r]{grid-template-columns:28px minmax(0,1fr)}.ov-process-stages__stage>.ov-icon-button[b-ptws70361r]{grid-column:2;justify-self:start}.ov-process-stages__heading[b-ptws70361r]{align-items:flex-start;flex-direction:column}}
+/* _content/OneVision.UI/Components/OVScheduleBuilder.razor.rz.scp.css */
+.ov-schedule-builder[b-ghsz2498e0] {
+    display: grid;
+    gap: 1rem;
+    font-size: var(--ov-font-size-body, .875rem);
+}
+
+.ov-schedule-builder__section[b-ghsz2498e0] {
+    border: 1px solid var(--ov-border-color, #d8dee8);
+    border-radius: .5rem;
+    background: var(--ov-surface, #fff);
+    padding: 1rem;
+}
+
+.ov-schedule-builder__section-heading[b-ghsz2498e0],
+.ov-schedule-builder__pane-heading[b-ghsz2498e0],
+.ov-schedule-builder__actions[b-ghsz2498e0] {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: .75rem;
+}
+
+.ov-schedule-builder__section-heading[b-ghsz2498e0] {
+    margin-bottom: .9rem;
+    padding-bottom: .65rem;
+    border-bottom: 1px solid var(--ov-border-subtle, #e8edf3);
+}
+
+.ov-schedule-builder__name-row[b-ghsz2498e0],
+.ov-schedule-builder__item-type[b-ghsz2498e0] {
+    max-width: 34rem;
+}
+
+.ov-schedule-builder__type-label[b-ghsz2498e0] {
+    margin: .9rem 0 .4rem;
+    font-weight: 600;
+}
+
+.ov-schedule-builder__types[b-ghsz2498e0] {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: .55rem;
+}
+
+.ov-schedule-builder__type[b-ghsz2498e0] {
+    display: grid;
+    gap: .2rem;
+    min-height: 4.1rem;
+    padding: .65rem .8rem;
+    text-align: left;
+    border: 1px solid var(--ov-border-color, #d8dee8);
+    border-radius: .45rem;
+    background: var(--ov-surface, #fff);
+    color: inherit;
+    cursor: pointer;
+}
+
+.ov-schedule-builder__type:hover:not(:disabled)[b-ghsz2498e0] {
+    border-color: var(--ov-primary, #0067c0);
+}
+
+.ov-schedule-builder__type.is-selected[b-ghsz2498e0] {
+    border-color: var(--ov-primary, #0067c0);
+    background: color-mix(in srgb, var(--ov-primary, #0067c0) 8%, white);
+    box-shadow: inset 0 0 0 1px var(--ov-primary, #0067c0);
+}
+
+.ov-schedule-builder__type-title[b-ghsz2498e0] {
+    font-weight: 600;
+}
+
+.ov-schedule-builder__type-description[b-ghsz2498e0] {
+    color: var(--ov-text-muted, #5f6b7a);
+    font-size: .78rem;
+}
+
+.ov-schedule-builder__settings[b-ghsz2498e0] {
+    margin-top: .8rem;
+    padding: .9rem;
+    border: 1px solid var(--ov-border-subtle, #e8edf3);
+    border-radius: .45rem;
+    background: var(--ov-surface-subtle, #fbfcfe);
+}
+
+.ov-schedule-builder__settings-grid[b-ghsz2498e0] {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(9rem, 1fr));
+    gap: .8rem 1rem;
+    align-items: end;
+}
+
+.ov-schedule-builder__field[b-ghsz2498e0] {
+    display: grid;
+    gap: .3rem;
+    min-width: 0;
+}
+
+.ov-schedule-builder__field > label[b-ghsz2498e0],
+.ov-schedule-builder__field > .ov-schedule-builder__inline-field + label[b-ghsz2498e0] {
+    font-weight: 600;
+    font-size: .8rem;
+}
+
+.ov-schedule-builder__field input[type="number"][b-ghsz2498e0],
+.ov-schedule-builder__field input[type="time"][b-ghsz2498e0],
+.ov-schedule-builder__field input[type="date"][b-ghsz2498e0],
+.ov-schedule-builder__field select[b-ghsz2498e0],
+.ov-schedule-builder__search[b-ghsz2498e0] {
+    width: 100%;
+    min-height: 2.25rem;
+    box-sizing: border-box;
+    border: 1px solid var(--ov-border-color, #cbd5e1);
+    border-radius: .35rem;
+    background: #fff;
+    color: inherit;
+    padding: .4rem .55rem;
+    font: inherit;
+}
+
+.ov-schedule-builder__inline-field[b-ghsz2498e0],
+.ov-schedule-builder__end-options[b-ghsz2498e0],
+.ov-schedule-builder__weekdays[b-ghsz2498e0] {
+    display: flex;
+    align-items: center;
+    gap: .4rem;
+}
+
+.ov-schedule-builder__inline-field input[type="number"][b-ghsz2498e0] {
+    max-width: 5.5rem;
+}
+
+.ov-schedule-builder__weekdays-field[b-ghsz2498e0],
+.ov-schedule-builder__end-field[b-ghsz2498e0] {
+    grid-column: span 2;
+}
+
+.ov-schedule-builder__weekdays[b-ghsz2498e0] {
+    flex-wrap: wrap;
+}
+
+.ov-schedule-builder__weekdays button[b-ghsz2498e0] {
+    min-width: 2.7rem;
+    min-height: 2.15rem;
+    border: 1px solid var(--ov-border-color, #cbd5e1);
+    border-radius: .35rem;
+    background: #fff;
+    color: inherit;
+    cursor: pointer;
+}
+
+.ov-schedule-builder__weekdays button.is-selected[b-ghsz2498e0] {
+    border-color: var(--ov-primary, #0067c0);
+    background: var(--ov-primary, #0067c0);
+    color: #fff;
+}
+
+.ov-schedule-builder__summary[b-ghsz2498e0] {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    margin-top: .9rem;
+    padding: .7rem .8rem;
+    border-top: 1px solid var(--ov-border-subtle, #e8edf3);
+    background: var(--ov-surface-subtle, #f7f9fc);
+    color: var(--ov-text-muted, #445064);
+}
+
+.ov-schedule-builder__item-flow[b-ghsz2498e0] {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+    gap: .65rem;
+    align-items: stretch;
+    margin-top: .8rem;
+}
+
+.ov-schedule-builder__pane[b-ghsz2498e0] {
+    display: grid;
+    grid-template-rows: auto auto minmax(13rem, 1fr);
+    gap: .55rem;
+    min-width: 0;
+    border: 1px solid var(--ov-border-color, #d8dee8);
+    border-radius: .45rem;
+    padding: .7rem;
+    background: #fff;
+}
+
+.ov-schedule-builder__clear[b-ghsz2498e0] {
+    border: 0;
+    background: transparent;
+    color: var(--ov-primary, #0067c0);
+    cursor: pointer;
+    font: inherit;
+}
+
+.ov-schedule-builder__list[b-ghsz2498e0] {
+    overflow: auto;
+    min-height: 12rem;
+    max-height: 19rem;
+    border-top: 1px solid var(--ov-border-subtle, #edf1f5);
+}
+
+.ov-schedule-builder__available-row[b-ghsz2498e0],
+.ov-schedule-builder__committed-row[b-ghsz2498e0] {
+    min-height: 2.35rem;
+    border-bottom: 1px solid var(--ov-border-subtle, #edf1f5);
+}
+
+.ov-schedule-builder__available-row[b-ghsz2498e0] {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    column-gap: .55rem;
+    align-items: center;
+    padding: .4rem .25rem;
+    cursor: pointer;
+}
+
+.ov-schedule-builder__available-row small[b-ghsz2498e0] {
+    grid-column: 2;
+    color: var(--ov-text-muted, #64748b);
+}
+
+.ov-schedule-builder__available-row:has(input:checked)[b-ghsz2498e0] {
+    background: color-mix(in srgb, var(--ov-primary, #0067c0) 8%, white);
+}
+
+.ov-schedule-builder__available-row.is-disabled[b-ghsz2498e0] {
+    opacity: .55;
+    cursor: default;
+}
+
+.ov-schedule-builder__committed-row[b-ghsz2498e0] {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: .5rem;
+    padding: .25rem;
+}
+
+.ov-schedule-builder__committed-row label[b-ghsz2498e0] {
+    display: flex;
+    align-items: center;
+    gap: .55rem;
+    flex: 1;
+}
+
+.ov-schedule-builder__transfer-actions[b-ghsz2498e0] {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: .5rem;
+}
+
+.ov-schedule-builder__empty[b-ghsz2498e0] {
+    padding: 1rem .5rem;
+    color: var(--ov-text-muted, #64748b);
+    text-align: center;
+}
+
+.ov-schedule-builder__actions[b-ghsz2498e0] {
+    justify-content: flex-end;
+    padding-top: .1rem;
+}
+
+@media (max-width: 900px) {
+    .ov-schedule-builder__types[b-ghsz2498e0],
+    .ov-schedule-builder__settings-grid[b-ghsz2498e0] {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .ov-schedule-builder__item-flow[b-ghsz2498e0] {
+        grid-template-columns: 1fr;
+    }
+
+    .ov-schedule-builder__transfer-actions[b-ghsz2498e0] {
+        flex-direction: row;
+        justify-content: flex-start;
+    }
+}
+
+@media (max-width: 600px) {
+    .ov-schedule-builder__types[b-ghsz2498e0],
+    .ov-schedule-builder__settings-grid[b-ghsz2498e0] {
+        grid-template-columns: 1fr;
+    }
+
+    .ov-schedule-builder__weekdays-field[b-ghsz2498e0],
+    .ov-schedule-builder__end-field[b-ghsz2498e0] {
+        grid-column: auto;
+    }
+
+    .ov-schedule-builder__end-options[b-ghsz2498e0],
+    .ov-schedule-builder__summary[b-ghsz2498e0] {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+}
 /* _content/OneVision.UI/Components/OVSelectionList.razor.rz.scp.css */
 .ov-selection-list[b-47zhjcmwui]{display:grid;gap:6px;margin:0;padding:0;border:0;min-width:0}.ov-selection-list legend[b-47zhjcmwui]{margin-bottom:4px;font-weight:600}.ov-selection-list__items[b-47zhjcmwui]{display:grid;border:1px solid var(--ov-colour-border);border-radius:var(--ov-radius-sm);overflow:hidden;background:var(--ov-colour-surface)}.ov-selection-list__item[b-47zhjcmwui]{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:8px;align-items:center;padding:8px 10px;border-bottom:1px solid var(--ov-colour-border);cursor:pointer}.ov-selection-list__item:last-child[b-47zhjcmwui]{border-bottom:0}.ov-selection-list__item:hover[b-47zhjcmwui]{background:var(--ov-colour-surface-soft)}.ov-selection-list__item--selected[b-47zhjcmwui]{background:var(--ov-colour-primary-soft)}.ov-selection-list__item--disabled[b-47zhjcmwui]{opacity:.5;cursor:not-allowed}.ov-selection-list__item>span:nth-child(2)[b-47zhjcmwui]{display:grid;gap:2px;min-width:0}.ov-selection-list__item small[b-47zhjcmwui],.ov-selection-list__end[b-47zhjcmwui]{color:var(--ov-colour-muted);font-size:var(--ov-font-size-caption)}
 /* _content/OneVision.UI/Components/OVSideNav.razor.rz.scp.css */
