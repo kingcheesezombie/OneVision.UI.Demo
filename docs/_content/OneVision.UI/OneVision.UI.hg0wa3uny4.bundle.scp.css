@@ -367,6 +367,100 @@
 .ov-skeleton[b-t271k7d4ur]{display:block;background:var(--ov-colour-surface-soft);overflow:hidden}.ov-skeleton--text[b-t271k7d4ur]{height:1em;border-radius:4px}.ov-skeleton--rectangle[b-t271k7d4ur]{min-height:40px;border-radius:var(--ov-radius-sm)}.ov-skeleton--circle[b-t271k7d4ur]{width:32px;height:32px;border-radius:50%}@media(prefers-reduced-motion:no-preference){.ov-skeleton--animated[b-t271k7d4ur]{background:linear-gradient(90deg,var(--ov-colour-surface-soft),var(--ov-colour-surface),var(--ov-colour-surface-soft));background-size:200% 100%;animation:ov-skeleton-wave-b-t271k7d4ur 1.4s ease-in-out infinite}}@keyframes ov-skeleton-wave-b-t271k7d4ur{0%{background-position:200% 0}100%{background-position:-200% 0}}
 /* _content/OneVision.UI/Components/OVSourceConfiguration.razor.rz.scp.css */
 .ov-source-configuration[b-mobf14vjhy]{display:grid;gap:14px;width:100%}.ov-source-configuration__header[b-mobf14vjhy]{display:flex;align-items:flex-start;justify-content:space-between;gap:20px}.ov-source-configuration__heading[b-mobf14vjhy]{min-width:0}.ov-source-configuration__heading h1[b-mobf14vjhy],.ov-source-configuration__heading p[b-mobf14vjhy]{margin:0}.ov-source-configuration__heading p[b-mobf14vjhy]{margin-top:4px;color:var(--ov-colour-muted)}.ov-source-configuration__header-actions[b-mobf14vjhy],.ov-source-configuration__footer-actions[b-mobf14vjhy]{display:flex;align-items:center;justify-content:flex-end;gap:8px;flex-wrap:wrap}.ov-source-configuration__validation[b-mobf14vjhy]{margin-top:-4px}.ov-source-configuration__footer[b-mobf14vjhy]{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-top:12px;border-top:1px solid var(--ov-colour-border)}.ov-source-configuration__footer-actions[b-mobf14vjhy]{margin-left:auto}@media(max-width:700px){.ov-source-configuration__header[b-mobf14vjhy],.ov-source-configuration__footer[b-mobf14vjhy]{align-items:stretch;flex-direction:column}.ov-source-configuration__header-actions[b-mobf14vjhy],.ov-source-configuration__footer-actions[b-mobf14vjhy]{width:100%;justify-content:flex-end}.ov-source-configuration__footer-actions[b-mobf14vjhy]{margin-left:0}}
+/* _content/OneVision.UI/Components/OVSourceProfile.razor.rz.scp.css */
+.ov-source-profile[b-zs9m5bllbe] {
+    display: grid;
+    gap: 0.85rem;
+}
+
+.ov-source-profile__header[b-zs9m5bllbe],
+.ov-source-profile__section-heading[b-zs9m5bllbe],
+.ov-source-profile__runbar[b-zs9m5bllbe] {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.ov-source-profile__header[b-zs9m5bllbe] {
+    align-items: flex-start;
+}
+
+.ov-source-profile__header h2[b-zs9m5bllbe] {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.ov-source-profile__header p[b-zs9m5bllbe] {
+    margin: 0.2rem 0 0;
+    color: var(--mud-palette-text-secondary);
+    font-size: 0.82rem;
+}
+
+.ov-source-profile__definition[b-zs9m5bllbe],
+.ov-source-profile__result[b-zs9m5bllbe] {
+    border: 1px solid var(--mud-palette-lines-default);
+    border-radius: 4px;
+    background: var(--mud-palette-surface);
+}
+
+.ov-source-profile__section-heading[b-zs9m5bllbe] {
+    min-height: 2.4rem;
+    padding: 0.55rem 0.7rem;
+    border-bottom: 1px solid var(--mud-palette-lines-default);
+    background: color-mix(in srgb, var(--mud-palette-primary) 4%, var(--mud-palette-surface));
+}
+
+.ov-source-profile__section-heading > div:first-child[b-zs9m5bllbe] {
+    display: flex;
+    align-items: baseline;
+    gap: 0.55rem;
+    min-width: 0;
+}
+
+.ov-source-profile__section-heading strong[b-zs9m5bllbe] {
+    font-size: 0.84rem;
+}
+
+.ov-source-profile__section-heading span[b-zs9m5bllbe],
+.ov-source-profile__run-context[b-zs9m5bllbe] {
+    color: var(--mud-palette-text-secondary);
+    font-size: 0.76rem;
+}
+
+.ov-source-profile__definition-content[b-zs9m5bllbe],
+.ov-source-profile__result-content[b-zs9m5bllbe] {
+    padding: 0.75rem;
+}
+
+.ov-source-profile__runbar[b-zs9m5bllbe] {
+    padding: 0.15rem 0;
+}
+
+.ov-source-profile__run-context[b-zs9m5bllbe] {
+    min-width: 0;
+}
+
+.ov-source-profile__progress[b-zs9m5bllbe],
+.ov-source-profile__message[b-zs9m5bllbe] {
+    margin-top: -0.25rem;
+}
+
+@media (max-width: 700px) {
+    .ov-source-profile__header[b-zs9m5bllbe],
+    .ov-source-profile__section-heading[b-zs9m5bllbe],
+    .ov-source-profile__runbar[b-zs9m5bllbe] {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .ov-source-profile__section-heading > div:first-child[b-zs9m5bllbe] {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 0.15rem;
+    }
+}
 /* _content/OneVision.UI/Components/OVStepper.razor.rz.scp.css */
 .ov-stepper[b-r57eaiy1k9]{width:100%}.ov-stepper__list[b-r57eaiy1k9]{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(0,1fr);margin:0;padding:0;list-style:none}.ov-stepper__step[b-r57eaiy1k9]{position:relative;min-width:0}.ov-stepper__button[b-r57eaiy1k9]{position:relative;z-index:1;display:flex;align-items:flex-start;gap:8px;width:100%;padding:6px 8px;border:0;background:transparent;color:inherit;font:inherit;text-align:left}.ov-stepper button.ov-stepper__button[b-r57eaiy1k9]{cursor:pointer}.ov-stepper button.ov-stepper__button:hover[b-r57eaiy1k9]{background:var(--ov-colour-surface-soft)}.ov-stepper__marker[b-r57eaiy1k9]{display:inline-flex;flex:0 0 24px;align-items:center;justify-content:center;width:24px;height:24px;border:1px solid var(--ov-colour-border-strong);border-radius:50%;background:var(--ov-colour-surface);font-size:12px;font-weight:700}.ov-stepper__text[b-r57eaiy1k9]{display:grid;gap:2px;min-width:0}.ov-stepper__text small[b-r57eaiy1k9]{color:var(--ov-colour-muted);font-size:var(--ov-font-size-caption)}.ov-stepper__connector[b-r57eaiy1k9]{position:absolute;top:18px;left:28px;right:-12px;height:1px;background:var(--ov-colour-border)}.ov-stepper__step--current .ov-stepper__marker[b-r57eaiy1k9]{border-color:var(--ov-colour-primary);background:var(--ov-colour-primary-soft);color:var(--ov-colour-primary)}.ov-stepper__step--complete .ov-stepper__marker[b-r57eaiy1k9]{border-color:#78b88f;color:#00662f}.ov-stepper__step--error .ov-stepper__marker[b-r57eaiy1k9]{border-color:#d13438;color:#a4262c}.ov-stepper__step--disabled[b-r57eaiy1k9]{opacity:.5}@media(max-width:700px){.ov-stepper__list[b-r57eaiy1k9]{grid-auto-flow:row;grid-auto-columns:auto}.ov-stepper__connector[b-r57eaiy1k9]{top:30px;bottom:-6px;left:19px;right:auto;width:1px;height:auto}}
 /* _content/OneVision.UI/Components/OVTimeline.razor.rz.scp.css */
