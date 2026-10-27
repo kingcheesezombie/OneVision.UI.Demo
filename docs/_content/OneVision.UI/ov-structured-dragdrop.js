@@ -24,6 +24,9 @@ export function attach(root, dotnet, context) {
         return target;
     };
 
+    const hasOneVisionPayload = dataTransfer =>
+        Array.from(dataTransfer?.types ?? []).includes(mime);
+
     const dragstart = event => {
         if (!(event.target instanceof Element) || !event.dataTransfer) return;
         const source = event.target.closest('[data-ov-drag-key][data-ov-drag-context]');
@@ -40,21 +43,14 @@ export function attach(root, dotnet, context) {
 
     const dragover = event => {
         const target = findTarget(event);
-        if (!target || !event.dataTransfer) {
+        if (!target || !event.dataTransfer || !hasOneVisionPayload(event.dataTransfer)) {
             clearActive();
             return;
         }
 
-        const raw = event.dataTransfer.getData(mime);
-        if (!raw) return;
-
-        try {
-            const payload = JSON.parse(raw);
-            if (payload.context !== context || !payload.key) return;
-        } catch {
-            return;
-        }
-
+        // The drag data store is in protected mode during dragover, so payload
+        // contents cannot be read here. The MIME type remains visible and is
+        // sufficient to opt this target into receiving the drop event.
         event.preventDefault();
         event.dataTransfer.dropEffect = 'copy';
         if (activeTarget !== target) {
@@ -65,13 +61,14 @@ export function attach(root, dotnet, context) {
     };
 
     const dragleave = event => {
-        if (!activeTarget || !(event.relatedTarget instanceof Node) || activeTarget.contains(event.relatedTarget)) return;
+        if (!activeTarget) return;
+        if (event.relatedTarget instanceof Node && activeTarget.contains(event.relatedTarget)) return;
         clearActive();
     };
 
     const drop = event => {
         const target = findTarget(event);
-        if (!target || !event.dataTransfer) return;
+        if (!target || !event.dataTransfer || !hasOneVisionPayload(event.dataTransfer)) return;
 
         const raw = event.dataTransfer.getData(mime);
         if (!raw) return;
