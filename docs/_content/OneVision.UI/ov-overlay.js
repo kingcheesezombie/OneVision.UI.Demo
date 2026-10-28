@@ -57,6 +57,11 @@ function releaseScrollLock() {
   }
 }
 
+function isTopmost(id) {
+  const ids = Array.from(overlays.keys());
+  return ids.length > 0 && ids[ids.length - 1] === id;
+}
+
 export function activate(id, surface, dotnet, lockScroll) {
   if (!surface || overlays.has(id)) return;
 
@@ -64,6 +69,8 @@ export function activate(id, surface, dotnet, lockScroll) {
   if (lockScroll) acquireScrollLock();
 
   const onKeyDown = event => {
+    if (!isTopmost(id)) return;
+
     if (event.key === 'Escape') {
       event.preventDefault();
       event.stopPropagation();
