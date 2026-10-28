@@ -447,3 +447,19 @@ body {
         padding-top: 0;
     }
 }
+
+@media (max-width: 640px) {
+    .ov-gallery-drawer {
+        display: none !important;
+    }
+
+    .ov-gallery-main {
+        margin-left: 0 !important;
+        width: 100% !important;
+    }
+
+    .ov-gallery-content,
+    .ov-profile--experience .ov-gallery-content {
+        padding: 16px 12px 36px;
+    }
+}
