@@ -1,4 +1,6 @@
 const overlays = new Map();
+const anchoredPopovers = new Map();
+let activeAnchoredPopoverId = null;
 let scrollLockCount = 0;
 let originalBodyOverflow = '';
 let originalBodyPaddingRight = '';
@@ -117,4 +119,151 @@ export function deactivate(id, restoreFocus = true) {
   }
 
   overlays.delete(id);
+}
+
+function triggerIsMeaningfullyVisible(trigger) {
+  if (!trigger || !document.contains(trigger)) return false;
+  const rect = trigger.getBoundingClientRect();
+  return rect.width > 0 && rect.height > 0 && rect.bottom > 0 && rect.right > 0 && rect.top < window.innerHeight && rect.left < window.innerWidth;
+}
+
+function positionAnchoredPopover(state) {
+  if (!triggerIsMeaningfullyVisible(state.trigger)) {
+    requestAnchoredPopoverClose(state.id, true);
+    return;
+  }
+
+  const gap = 4;
+  const viewportGap = 8;
+  const triggerRect = state.trigger.getBoundingClientRect();
+  const surfaceRect = state.surface.getBoundingClientRect();
+  const availableBelow = window.innerHeight - triggerRect.bottom - viewportGap;
+  const availableAbove = triggerRect.top - viewportGap;
+  const openAbove = availableBelow < surfaceRect.height + gap && availableAbove > availableBelow;
+
+  let top = openAbove
+    ? triggerRect.top - surfaceRect.height - gap
+    : triggerRect.bottom + gap;
+
+  top = Math.max(viewportGap, Math.min(top, window.innerHeight - surfaceRect.height - viewportGap));
+
+  let left = state.alignRight
+    ? triggerRect.right - surfaceRect.width
+    : triggerRect.left;
+
+  left = Math.max(viewportGap, Math.min(left, window.innerWidth - surfaceRect.width - viewportGap));
+
+  state.surface.style.top = `${Math.round(top)}px`;
+  state.surface.style.left = `${Math.round(left)}px`;
+  state.surface.dataset.ovPopoverPlacement = openAbove ? 'above' : 'below';
+}
+
+function restoreAnchoredSurface(state) {
+  if (!state.surface) return;
+
+  if (state.placeholder?.parentNode) {
+    state.placeholder.parentNode.insertBefore(state.surface, state.placeholder);
+    state.placeholder.remove();
+  } else if (state.surface.isConnected) {
+    state.surface.remove();
+  }
+
+  state.surface.style.removeProperty('top');
+  state.surface.style.removeProperty('left');
+  state.surface.style.removeProperty('max-width');
+  state.surface.style.removeProperty('max-height');
+  state.surface.style.removeProperty('overflow-y');
+  delete state.surface.dataset.ovPopoverPlacement;
+  delete state.surface.dataset.ovPopoverPortalled;
+}
+
+function teardownAnchoredPopover(state, restoreFocus) {
+  document.removeEventListener('pointerdown', state.onPointerDown, true);
+  document.removeEventListener('keydown', state.onKeyDown, true);
+  window.removeEventListener('resize', state.onResize);
+  document.removeEventListener('scroll', state.onScroll, true);
+
+  restoreAnchoredSurface(state);
+
+  if (restoreFocus && state.trigger && document.contains(state.trigger)) {
+    state.trigger.focus();
+  }
+
+  anchoredPopovers.delete(state.id);
+  if (activeAnchoredPopoverId === state.id) activeAnchoredPopoverId = null;
+}
+
+function requestAnchoredPopoverClose(id, restoreFocus) {
+  const state = anchoredPopovers.get(id);
+  if (!state || state.closing) return;
+  state.closing = true;
+  teardownAnchoredPopover(state, restoreFocus);
+  state.dotnet.invokeMethodAsync('HandlePopoverCloseFromJs');
+}
+
+export function activateAnchoredPopover(id, trigger, surface, dotnet, alignRight = true) {
+  if (!trigger || !surface || anchoredPopovers.has(id)) return;
+
+  if (activeAnchoredPopoverId && activeAnchoredPopoverId !== id) {
+    requestAnchoredPopoverClose(activeAnchoredPopoverId, true);
+  }
+
+  const placeholder = document.createComment(`ov-popover:${id}`);
+  surface.parentNode?.insertBefore(placeholder, surface);
+  document.body.appendChild(surface);
+  surface.dataset.ovPopoverPortalled = 'true';
+  surface.style.maxWidth = 'calc(100vw - 16px)';
+  surface.style.maxHeight = 'calc(100vh - 16px)';
+  surface.style.overflowY = 'auto';
+
+  const state = {
+    id,
+    trigger,
+    surface,
+    dotnet,
+    alignRight,
+    placeholder,
+    closing: false,
+    onPointerDown: null,
+    onKeyDown: null,
+    onResize: null,
+    onScroll: null
+  };
+
+  state.onPointerDown = event => {
+    const target = event.target;
+    if (state.surface.contains(target) || state.trigger.contains(target)) return;
+    requestAnchoredPopoverClose(id, true);
+  };
+
+  state.onKeyDown = event => {
+    if (event.key !== 'Escape') return;
+    event.preventDefault();
+    event.stopPropagation();
+    requestAnchoredPopoverClose(id, true);
+  };
+
+  state.onResize = () => positionAnchoredPopover(state);
+  state.onScroll = () => positionAnchoredPopover(state);
+
+  anchoredPopovers.set(id, state);
+  activeAnchoredPopoverId = id;
+
+  document.addEventListener('pointerdown', state.onPointerDown, true);
+  document.addEventListener('keydown', state.onKeyDown, true);
+  window.addEventListener('resize', state.onResize);
+  document.addEventListener('scroll', state.onScroll, true);
+
+  positionAnchoredPopover(state);
+
+  window.requestAnimationFrame(() => {
+    const firstItem = state.surface.querySelector('[role="menuitem"]:not([disabled])');
+    if (firstItem instanceof HTMLElement) firstItem.focus();
+  });
+}
+
+export function deactivateAnchoredPopover(id, restoreFocus = true) {
+  const state = anchoredPopovers.get(id);
+  if (!state) return;
+  teardownAnchoredPopover(state, restoreFocus);
 }
