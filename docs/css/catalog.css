@@ -675,3 +675,29 @@
         justify-content: flex-start;
     }
 }
+
+/* Governed pattern exploration: gallery tooling, not part of the OneVision runtime library. */
+.ov-pattern-explorer{display:grid;grid-template-columns:minmax(210px,255px) minmax(0,1fr);align-items:start;gap:1rem;min-width:0;margin-top:1rem}
+.ov-pattern-explorer__controls{display:grid;align-content:start;gap:.55rem;min-width:0;padding:.85rem;border:1px solid var(--ov-colour-border);border-radius:5px;background:var(--ov-colour-surface)}
+.ov-pattern-explorer__control-label{display:block;margin-top:.45rem;color:var(--ov-colour-muted);font-size:.74rem;font-weight:600}
+.ov-pattern-explorer__controls .ov-demo-native-select{width:100%;min-width:0;max-width:100%}
+.ov-pattern-explorer__toggle{display:flex;align-items:flex-start;gap:.55rem;min-height:1.5rem;padding:.12rem 0;font-size:.78rem;line-height:1.45;cursor:pointer}
+.ov-pattern-explorer__toggle input{flex:none;margin-top:.18rem;accent-color:var(--ov-colour-primary)}
+.ov-pattern-explorer__reset{justify-self:start;margin-top:.4rem;border:0;background:transparent;color:var(--ov-colour-primary);font:inherit;font-size:.76rem;cursor:pointer;text-decoration:underline;text-underline-offset:2px}
+.ov-pattern-explorer__reset:focus-visible,.ov-pattern-explorer__toggle input:focus-visible{outline:2px solid var(--ov-colour-primary);outline-offset:3px}
+.ov-pattern-explorer__hint{margin:.2rem 0 0;color:var(--ov-colour-muted);font-size:.73rem;line-height:1.45}
+.ov-pattern-explorer__preview{min-width:0;max-width:100%;padding:.8rem;border:1px solid var(--ov-colour-border);border-radius:5px;background:var(--ov-colour-surface)}
+.ov-pattern-explorer__preview-header{display:flex;justify-content:space-between;align-items:center;gap:.5rem;flex-wrap:wrap;margin-bottom:.8rem}
+.ov-pattern-explorer__preview-header code{color:var(--ov-colour-muted);font-size:.7rem}
+.ov-pattern-explorer__preview > *{min-width:0}
+@media(max-width:860px){.ov-pattern-explorer{grid-template-columns:minmax(0,1fr)}.ov-pattern-explorer__controls{grid-template-columns:repeat(2,minmax(0,1fr));gap:.5rem 1rem}.ov-pattern-explorer__controls>.ov-workbench-label,.ov-pattern-explorer__controls>.ov-pattern-explorer__hint{grid-column:1/-1}.ov-pattern-explorer__control-label{margin-top:0}.ov-pattern-explorer__toggle{min-width:0}.ov-pattern-explorer__reset{grid-column:1/-1}}
+@media(max-width:530px){.ov-pattern-explorer__controls{grid-template-columns:minmax(0,1fr)}.ov-pattern-explorer__controls>.ov-workbench-label,.ov-pattern-explorer__controls>.ov-pattern-explorer__hint,.ov-pattern-explorer__reset{grid-column:auto}.ov-pattern-explorer__preview{padding:.55rem}}
+
+/* The reference pattern retains the full gallery width; the workbench must not compress live OVP layouts. */
+.ov-pattern-explorer{grid-template-columns:minmax(0,1fr)}
+.ov-pattern-explorer__controls{grid-template-columns:repeat(auto-fit,minmax(min(100%,180px),1fr));gap:.5rem .85rem}
+.ov-pattern-explorer__controls>.ov-workbench-label,.ov-pattern-explorer__controls>.ov-pattern-explorer__hint{grid-column:1/-1}
+.ov-pattern-explorer__controls>.ov-pattern-explorer__reset{grid-column:1/-1}
+.ov-pattern-explorer__controls>.ov-pattern-explorer__control-label{align-self:end}
+.ov-pattern-explorer__preview{padding:.65rem;min-width:0}
+@media(max-width:530px){.ov-pattern-explorer__controls{grid-template-columns:minmax(0,1fr)}.ov-pattern-explorer__controls>.ov-workbench-label,.ov-pattern-explorer__controls>.ov-pattern-explorer__hint,.ov-pattern-explorer__controls>.ov-pattern-explorer__reset{grid-column:auto}}
