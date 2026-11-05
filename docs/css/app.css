@@ -463,3 +463,6 @@ body {
         padding: 16px 12px 36px;
     }
 }
+
+/* The build SHA indicator is informational; it must never block a modal footer or other UI action. */
+.ov-gallery-build-marker { pointer-events: none !important; }
