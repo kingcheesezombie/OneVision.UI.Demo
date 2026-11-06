@@ -168,13 +168,24 @@
 .ov-configuration-relationship--labelleddivider .ov-configuration-relationship__label[b-6pueha4nmt]{flex:none;font-weight:500}
 .ov-configuration-relationship--arrow[b-6pueha4nmt]{margin:.18rem 0}
 /* _content/OneVision.UI/Components/OVConfigurationSection.razor.rz.scp.css */
-.ov-configuration-section[b-qm45q0sum5]{display:grid;gap:.45rem;min-width:0}
-.ov-configuration-section__header[b-qm45q0sum5]{display:grid;gap:.16rem;padding:.2rem .1rem .32rem}
-.ov-configuration-section__heading[b-qm45q0sum5]{display:flex;align-items:center;gap:.48rem;min-width:0}
-.ov-configuration-section__title[b-qm45q0sum5]{font-size:.95rem;font-weight:650;line-height:1.35;color:var(--mud-palette-text-primary)}
-.ov-configuration-section__complete[b-qm45q0sum5]{display:inline-flex;align-items:center;justify-content:center;flex:none;width:1rem;height:1rem;border:1px solid var(--mud-palette-success);border-radius:50%;color:var(--mud-palette-success);font-size:.67rem;font-weight:700}
-.ov-configuration-section__header p[b-qm45q0sum5]{margin:0;color:var(--mud-palette-text-secondary);font-size:.77rem;line-height:1.4}
-.ov-configuration-section__steps[b-qm45q0sum5]{display:grid;gap:0;min-width:0}
+/* A section is the visual stage; steps remain subordinate within its boundary. */
+.ov-configuration-section[b-qm45q0sum5]{display:grid;gap:0;min-width:0;overflow:hidden;border:1px solid var(--mud-palette-lines-default);border-radius:6px;background:var(--mud-palette-surface)}
+.ov-configuration-section__header[b-qm45q0sum5]{display:flex;align-items:center;gap:.7rem;min-width:0;padding:.72rem .85rem;background:#23476c;color:#fff}
+.ov-configuration-section--current .ov-configuration-section__header[b-qm45q0sum5]{background:var(--mud-palette-primary,#0868bc)}
+.ov-configuration-section--attention .ov-configuration-section__header[b-qm45q0sum5]{background:var(--mud-palette-error,#b42318)}
+.ov-configuration-section--pending .ov-configuration-section__header[b-qm45q0sum5]{background:color-mix(in srgb,var(--mud-palette-primary) 7%,var(--mud-palette-surface));color:var(--mud-palette-text-primary)}
+.ov-configuration-section__number[b-qm45q0sum5]{display:inline-flex;align-items:center;justify-content:center;flex:none;width:2rem;height:2rem;border-radius:4px;background:rgb(255 255 255 / 15%);color:inherit;font-size:.84rem;font-weight:700}
+.ov-configuration-section--pending .ov-configuration-section__number[b-qm45q0sum5]{background:color-mix(in srgb,var(--mud-palette-primary) 12%,var(--mud-palette-surface));color:var(--mud-palette-primary)}
+.ov-configuration-section__heading[b-qm45q0sum5]{display:grid;gap:.15rem;min-width:0;flex:1}
+.ov-configuration-section__title[b-qm45q0sum5]{font-size:.9rem;font-weight:700;line-height:1.25;color:inherit}
+.ov-configuration-section__header p[b-qm45q0sum5]{margin:0;color:inherit;opacity:.85;font-size:.73rem;line-height:1.35;overflow-wrap:anywhere}
+.ov-configuration-section__meta[b-qm45q0sum5]{display:grid;justify-items:end;gap:.15rem;flex:none;max-width:13rem;text-align:right}
+.ov-configuration-section__status[b-qm45q0sum5]{font-size:.72rem;font-weight:700;white-space:nowrap}
+.ov-configuration-section__progress[b-qm45q0sum5]{font-size:.67rem;opacity:.87;white-space:nowrap}
+.ov-configuration-section__steps[b-qm45q0sum5]{display:grid;gap:0;min-width:0;padding:.25rem .55rem;background:var(--mud-palette-surface)}
+.ov-configuration-section__steps[b-qm45q0sum5]  .ov-configuration-step--current{background:var(--mud-palette-surface)}
+.ov-configuration-section__steps[b-qm45q0sum5]  .ov-configuration-step--completed{border-left-color:transparent}
+@media(max-width:560px){.ov-configuration-section__header[b-qm45q0sum5]{align-items:flex-start;gap:.5rem;padding:.65rem}.ov-configuration-section__number[b-qm45q0sum5]{width:1.65rem;height:1.65rem}.ov-configuration-section__heading[b-qm45q0sum5]{min-width:0}.ov-configuration-section__meta[b-qm45q0sum5]{max-width:8rem}.ov-configuration-section__progress[b-qm45q0sum5]{white-space:normal}.ov-configuration-section__steps[b-qm45q0sum5]{padding:.2rem .3rem}}
 /* _content/OneVision.UI/Components/OVConfigurationStep.razor.rz.scp.css */
 .ov-configuration-step[b-bnqk5q2skc]{display:grid;grid-template-columns:1.65rem minmax(0,1fr);gap:.55rem;min-width:0;padding:.6rem .65rem;border-left:3px solid transparent;background:var(--mud-palette-surface)}
 .ov-configuration-step+.ov-configuration-step[b-bnqk5q2skc]{border-top:1px solid var(--mud-palette-lines-default)}
