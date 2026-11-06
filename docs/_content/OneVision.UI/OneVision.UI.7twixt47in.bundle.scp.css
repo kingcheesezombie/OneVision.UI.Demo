@@ -1,3 +1,41 @@
+/* _content/OneVision.UI/Components/OVAlert.razor.rz.scp.css */
+/* Keep alert copy and its action within the available component width,
+   including compact administrative and browser-zoom layouts. */
+.ov-alert__content[b-52q8lny59y] {
+    display: flex;
+    align-items: flex-start;
+    gap: .5rem;
+    min-width: 0;
+    width: 100%;
+}
+.ov-alert__message[b-52q8lny59y] {
+    flex: 1 1 auto;
+    min-width: 0;
+    overflow-wrap: anywhere;
+}
+.ov-alert__content[b-52q8lny59y]  .ov-icon-button {
+    flex: 0 0 auto;
+}
+
+/* MudAlert's message is a flex child. Without an explicit shrink minimum it
+   overflows narrow administrative panes at 200%/400% browser zoom. */
+.ov-alert__host[b-52q8lny59y] {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+}
+.ov-alert__host[b-52q8lny59y]  .mud-alert {
+    max-width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+}
+.ov-alert__host[b-52q8lny59y]  .mud-alert-message {
+    flex: 1 1 0;
+    min-width: 0;
+    max-width: 100%;
+    overflow-wrap: anywhere;
+}
 /* _content/OneVision.UI/Components/OVAllocation.razor.rz.scp.css */
 .ov-allocation[b-zxalf9yg2p] {
     display: grid;
