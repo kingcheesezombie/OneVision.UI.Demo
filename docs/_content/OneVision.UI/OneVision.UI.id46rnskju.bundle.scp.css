@@ -161,6 +161,11 @@
 .ov-configuration-relationship[b-6pueha4nmt]{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.08rem;margin:.35rem 0 .4rem;min-width:0;color:var(--mud-palette-text-secondary);font-size:.73rem;font-weight:600}
 .ov-configuration-relationship__direction[b-6pueha4nmt]{display:inline-flex;align-items:center;justify-content:center;color:var(--mud-palette-primary);font-size:1.12rem;line-height:1.1}
 .ov-configuration-relationship__label[b-6pueha4nmt]{max-width:100%;padding:0 .35rem;text-align:center;overflow-wrap:anywhere}
+
+.ov-configuration-relationship--divider[b-6pueha4nmt],.ov-configuration-relationship--labelleddivider[b-6pueha4nmt]{display:flex;flex-direction:row;gap:.55rem;margin:.3rem 0}
+.ov-configuration-relationship__line[b-6pueha4nmt]{display:block;height:1px;min-width:1rem;flex:1;background:var(--mud-palette-lines-default)}
+.ov-configuration-relationship--labelleddivider .ov-configuration-relationship__label[b-6pueha4nmt]{flex:none;font-weight:500}
+.ov-configuration-relationship--arrow[b-6pueha4nmt]{margin:.15rem 0}
 /* _content/OneVision.UI/Components/OVConfigurationSection.razor.rz.scp.css */
 .ov-configuration-section[b-qm45q0sum5]{display:grid;gap:.4rem;min-width:0}
 .ov-configuration-section__header[b-qm45q0sum5]{display:grid;gap:.1rem;padding:.1rem 0 .3rem}
@@ -490,6 +495,19 @@
 @media(max-width:560px){.ov-progressive-builder__footer[b-73kefvrw1h]{align-items:stretch;flex-direction:column-reverse}.ov-progressive-builder__footer[b-73kefvrw1h]  .mud-button-root{width:100%}}
 
 .ov-progressive-builder__progress[b-73kefvrw1h]{max-width:26rem;min-width:0}.ov-progressive-builder__feedback[b-73kefvrw1h]{min-width:0}.ov-progressive-builder[aria-busy="true"] .ov-progressive-builder__body[b-73kefvrw1h]{opacity:.96}
+
+/* Definition-driven presentation uses the compact administrative density.
+   Legacy ChildContent compositions retain their existing appearance. */
+.ov-progressive-builder__body[data-composition="definitions"][b-73kefvrw1h]{gap:.4rem}
+.ov-progressive-builder__body[data-composition="definitions"][b-73kefvrw1h]  .ov-configuration-section{gap:.2rem}
+.ov-progressive-builder__body[data-composition="definitions"][b-73kefvrw1h]  .ov-configuration-section__header{padding:.06rem 0 .22rem}
+.ov-progressive-builder__body[data-composition="definitions"][b-73kefvrw1h]  .ov-configuration-step{grid-template-columns:1.4rem minmax(0,1fr);gap:.35rem;padding:.38rem .48rem;border-left-width:2px}
+.ov-progressive-builder__body[data-composition="definitions"][b-73kefvrw1h]  .ov-configuration-step--current{padding:.58rem .58rem .65rem}
+.ov-progressive-builder__body[data-composition="definitions"][b-73kefvrw1h]  .ov-configuration-step__sequence{width:1.3rem;height:1.3rem}
+.ov-progressive-builder__body[data-composition="definitions"][b-73kefvrw1h]  .ov-configuration-step--completed .ov-configuration-step__sequence{width:1.2rem;height:1.2rem}
+.ov-progressive-builder__body[data-composition="definitions"][b-73kefvrw1h]  .ov-configuration-step--current .ov-configuration-step__label{font-size:.84rem}
+.ov-progressive-builder__body[data-composition="definitions"][b-73kefvrw1h]  .ov-configuration-step__pending-text{font-size:.69rem}
+.ov-progressive-builder__body[data-composition="definitions"][b-73kefvrw1h]  .ov-configuration-step--completed .ov-configuration-step__value{font-size:.8rem;font-weight:600}
 /* _content/OneVision.UI/Components/OVScheduleBuilder.razor.rz.scp.css */
 .ov-schedule-builder[b-ghsz2498e0] {
     display: grid;
