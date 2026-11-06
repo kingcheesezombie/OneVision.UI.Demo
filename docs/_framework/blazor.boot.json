@@ -1,7 +1,7 @@
 {
   "mainAssemblyName": "OneVision.UI.Demo",
   "resources": {
-    "hash": "sha256-ZZwJaJ/LX+/US66hqvzXBngI9lLalq9BUuWh767PcO0=",
+    "hash": "sha256-sOjEG0cshanyyBNNF7irYSQMjo1eb3B1PkT6KR7EP+I=",
     "fingerprinting": {
       "Microsoft.AspNetCore.Components.vv99duxupq.wasm": "Microsoft.AspNetCore.Components.wasm",
       "Microsoft.AspNetCore.Components.Forms.bau7v9e2ym.wasm": "Microsoft.AspNetCore.Components.Forms.wasm",
@@ -44,8 +44,8 @@
       "System.Text.RegularExpressions.tbwr5ajgjl.wasm": "System.Text.RegularExpressions.wasm",
       "System.Threading.bqig2prg01.wasm": "System.Threading.wasm",
       "System.Private.CoreLib.4ts6la9u9h.wasm": "System.Private.CoreLib.wasm",
-      "OneVision.UI.syjjevxo4e.wasm": "OneVision.UI.wasm",
-      "OneVision.UI.Demo.g9n86ntdwt.wasm": "OneVision.UI.Demo.wasm",
+      "OneVision.UI.sxbs1cmwgc.wasm": "OneVision.UI.wasm",
+      "OneVision.UI.Demo.p9bv5xtl0l.wasm": "OneVision.UI.Demo.wasm",
       "dotnet.js": "dotnet.js",
       "dotnet.native.fd55pqaqpk.js": "dotnet.native.js",
       "dotnet.native.vww2n0y4ua.wasm": "dotnet.native.wasm",
@@ -112,8 +112,8 @@
       "System.Text.Json.928l0buzje.wasm": "sha256-7zcKZyCsAYXD6PD8Ol4CUb8m4pbdxqC/SeywcT3gSgY=",
       "System.Text.RegularExpressions.tbwr5ajgjl.wasm": "sha256-l2bYFfBorHrRXm0/t2Qjz+tu9guNwmWWRwEceQ/nEgA=",
       "System.Threading.bqig2prg01.wasm": "sha256-LUcYnlpfScC+ffGoaM8mXIuvNY/4PVhSfbESPZU8AtA=",
-      "OneVision.UI.syjjevxo4e.wasm": "sha256-1KXxfJFuCtVHtdnZIHsMZhVUV2qIFS/3ZE2cqPeB3a0=",
-      "OneVision.UI.Demo.g9n86ntdwt.wasm": "sha256-xLmWVZKefRskESbS8N4Z6z379e2Qd5cb3thNGKXjgC4="
+      "OneVision.UI.sxbs1cmwgc.wasm": "sha256-cNwwOLZF18QK/mBt7PbbtoiNrFWkrv/KdzotW56rK3Y=",
+      "OneVision.UI.Demo.p9bv5xtl0l.wasm": "sha256-M1zWzUNJ9FrCqZXV7Rw+tefxr79881/jmCvZQRRlows="
     },
     "libraryInitializers": {
       "_content/Microsoft.FluentUI.AspNetCore.Components/Microsoft.FluentUI.AspNetCore.Components.lib.module.js": "sha256-KyfiooohMk+1umjbXBxRZaOXMTo8AeNxYKtXOc+EFCg="
